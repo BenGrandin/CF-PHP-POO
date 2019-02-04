@@ -40,7 +40,7 @@
                 <p class="lead">You don't believe in the Force, do you? You don't believe in the Force, do you? <strong> What!?</strong> <em> You're all clear, kid.</em> Let's blow this thing and go home!</p>
             </div>
         </div>
-        
+
             <!-- Story 2 --->
             <section class="container-fluid">
                 <div class="row">
@@ -209,7 +209,7 @@
     <!-- Story 5 --->
     <section class="container-fluid">
         <div class="row">
-            <div class="col-11"><h2>Heritage</h2></div>
+            <div class="col-11 text-right"><h2>Heritage</h2></div>
             <div class="col-1"></div>
         </div>
     <!-- Heritage -->
@@ -250,7 +250,7 @@
     <section class="container-fluid">
 
         <div class="row">
-            <div class="col-11"><h2>Autoloader</h2></div>
+            <div class="col-11 text-right"><h2>Autoloader</h2></div>
             <div class="col-1"></div>
         </div>
             <!-- Autoloader -->
