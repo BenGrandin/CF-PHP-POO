@@ -33,40 +33,14 @@
     </nav>
     <!-- Header = Story 1 --->
     <section class="container-fluid">
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item">
-            <img class="d-block w-100" src="http://www.apimages.com/Images/Ap_Creative_Stock_Header.jpg">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-            </div>
-            <div class="carousel-item active">
-            <img class="d-block w-100" src="https://www.adweek.com/files/2015_May/iStock-Unfinished-Business-6.jpg" data-holder-rendered="true">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="https://44u8552epjw3rivfs1yfikr1-wpengine.netdna-ssl.com/wp-content/uploads/2017/11/young-man-2939344_1280.jpg">
-            <div class="carousel-caption d-none d-md-block">
-                <h5>First slide label</h5>
-                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Bonjour.</h1>
+                <p class="lead">Partially, but it also obeys your commands. I call it luck. As you wish. Your eyes can deceive you. Don't trust them.</p>
+<p class="lead">You don't believe in the Force, do you? You don't believe in the Force, do you? <strong> What!?</strong> <em> You're all clear, kid.</em> Let's blow this thing and go home!</p>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</section>
+    </section>
             <!-- Story 2 --->
             <section class="container-fluid">
                 
