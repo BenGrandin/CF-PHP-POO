@@ -32,18 +32,17 @@
         </div>
     </nav>
     <!-- Header = Story 1 --->
-    <section class="container-fluid">
+
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Bonjour.</h1>
                 <p class="lead">Partially, but it also obeys your commands. I call it luck. As you wish. Your eyes can deceive you. Don't trust them.</p>
-<p class="lead">You don't believe in the Force, do you? You don't believe in the Force, do you? <strong> What!?</strong> <em> You're all clear, kid.</em> Let's blow this thing and go home!</p>
+                <p class="lead">You don't believe in the Force, do you? You don't believe in the Force, do you? <strong> What!?</strong> <em> You're all clear, kid.</em> Let's blow this thing and go home!</p>
             </div>
         </div>
-    </section>
+        
             <!-- Story 2 --->
             <section class="container-fluid">
-                
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-11"><h2>Les classes et méthodes version procédurale et POO</h2></div>
@@ -76,7 +75,7 @@
             <!-- Story 3 --->
             <section class="container-fluid">
                 <div class="row">
-                <div class="col-11"><h2>Accesseurs, mutateurs, constructeur et hydratation</h2></div>
+                <div class="col-11 text-right"><h2>Accesseurs, mutateurs, constructeur et hydratation</h2></div>
                 <div class="col-1"></div>
                 </div>
                 <!-- Setters -->
@@ -251,8 +250,8 @@
     <section class="container-fluid">
 
         <div class="row">
-            <div class="col-1"></div>
             <div class="col-11"><h2>Autoloader</h2></div>
+            <div class="col-1"></div>
         </div>
             <!-- Autoloader -->
             <div class="row">
@@ -270,7 +269,7 @@
     <!-- Story 8 --->
     <section class="container-fluid">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex justify-content-around">
                 <a href="https://github.com/BenGrandin">Benjamin Grandin</a>
                 <a href="https://github.com/DoryanLievre">Doryan Lièvre</a>
                 <a href="https://github.com/CedricLphn">Cedric Leprohon</a>
