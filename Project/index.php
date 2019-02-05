@@ -7,27 +7,29 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> 
 
 
     <title>POO PHP by Coding Factory</title>
 </head>
 <body>
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <img src="./assets/logo.png" alt="" style="width: 50px; margin-right: 50px;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Story 2</a>
-                <a class="nav-item nav-link" href="#">Story 3</a>
-                <a class="nav-item nav-link" href="#">Story 4</a>
-                <a class="nav-item nav-link" href="#">Story 5</a>
-                <a class="nav-item nav-link" href="#">Story 6</a>
-                <a class="nav-item nav-link" href="#">Story 7</a>
-                <a class="nav-item nav-link" href="#">A propos</a>
+                <a class="nav-item nav-link" href="#class">Classes et méthodes</a>
+                <a class="nav-item nav-link" href="#acess">Acesseurs, mutateurs, constructeur et hydrate</a>
+                <a class="nav-item nav-link" href="#reso">Résolution de portée</a>
+                <a class="nav-item nav-link" href="#heri">Héritage</a>
+                <a class="nav-item nav-link" href="#int">Interface</a>
+                <a class="nav-item nav-link" href="#auto">Autoloader</a>
+                <a class="nav-item nav-link" href="#propos">A propos</a>
             </div>
         </div>
     </nav>
@@ -42,7 +44,7 @@
         </div>
 
             <!-- Story 2 --->
-            <section class="container-fluid">
+            <section class="container-fluid" id="class">
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-11"><h2>Les classes et méthodes version procédurale et POO</h2></div>
@@ -93,12 +95,17 @@
 
             </section>
             <!-- Story 3 --->
-            <section class="container-fluid">
+            <section class="container-fluid greybk_whitecolor" id="acess">
                 <div class="row">
                 <div class="col-11 text-right"><h2>Accesseurs, mutateurs, constructeur et hydratation</h2></div>
                 <div class="col-1"></div>
                 </div>
                 <!-- Setters -->
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Setters</h3>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-4 examples">
@@ -107,16 +114,19 @@
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                            <h3>Setters</h3>
                         <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
                 <!-- Getters -->
                 <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Getters</h3>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                            <h3>Getters</h3>
                         <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
                     </div>
                     <div class="col-1"></div>
@@ -128,6 +138,11 @@
                 </div>
                 <!-- Constructor -->
                 <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Constructor</h3>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-1"></div>
                     <div class="col-4 examples">
                         <pre><code>function lorem() {
@@ -135,16 +150,19 @@
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                            <h3>Constructor</h3>
                         <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
                 <!-- Hydrate -->
                 <div class="row">
+                    <div class="col-12 text-center">
+                        <h3>Hydrate</h3>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                            <h3>Hydrate</h3>
                         <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
                     </div>
                     <div class="col-1"></div>
@@ -158,7 +176,7 @@
 
 
     <!-- Story 4 --->
-    <section class="container-fluid">
+    <section class="container-fluid" id="reso">
     <div class="row">
             <div class="col-1"></div>
             <div class="col-11"><h2>Résolution de portée</h2></div>
@@ -166,24 +184,32 @@
 
 
         <!-- Self -->
-        <div class="row">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3>Self</h3>
+                </div>
+            </div>
+            <div class="row">
             <div class="col-1"></div>
             <div class="col-4 examples">
                 <pre><code class="php">echo "salut";</code></pre>
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <h3>Self</h3>
             <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p></div>
             <div class="col-1"></div>
         </div>
 
 
          <!-- Static -->
-        <div class="row">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h3>Static</h3>
+                </div>
+            </div>
+            <div class="row">
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <h3>Static</h3>
                 <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
             </div>
             <div class="col-1"></div>
@@ -197,23 +223,32 @@
 
         <!-- Parent -->
         <div class="row">
+            <div class="col-12 text-center">
+                <h3>Parent</h3>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-1"></div>
             <div class="col-4 examples">
                 <pre><code class="php">echo "salut";</code></pre>
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <h3>Parent</h3>
+            
             <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p></div>
             <div class="col-1"></div>
         </div>
 
 
          <!-- This -->
+         <div class="row">
+            <div class="col-12 text-center">
+                <h3>This</h3>
+            </div>
+        </div>
         <div class="row">
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <h3>This</h3>
                 <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
             </div>
             <div class="col-1"></div>
@@ -227,9 +262,9 @@
 
     </section>
     <!-- Story 5 --->
-    <section class="container-fluid">
+    <section class="container-fluid greybk_whitecolor" id="heri">
         <div class="row">
-            <div class="col-11 text-right"><h2>Heritage</h2></div>
+            <div class="col-11 text-right"><h2>Héritage</h2></div>
             <div class="col-1"></div>
         </div>
     <!-- Heritage -->
@@ -246,7 +281,7 @@
 
     </section>
     <!-- Story 6 --->
-    <section class="container-fluid">
+    <section class="container-fluid" id="int">
         <div class="row">
             <div class="col-1"></div>
             <div class="col-11"><h2>Interface</h2></div>
@@ -267,7 +302,7 @@
         </div>
     </section>
     <!-- Story 7 --->
-    <section class="container-fluid">
+    <section class="container-fluid greybk_whitecolor" id="auto">
 
         <div class="row">
             <div class="col-11 text-right"><h2>Autoloader</h2></div>
@@ -287,7 +322,7 @@
 
     </section>
     <!-- Story 8 --->
-    <section class="container-fluid">
+    <section class="container-fluid" id="propos">
         <div class="row">
             <div class="col-12 d-flex justify-content-around">
                 <a href="https://github.com/BenGrandin">Benjamin Grandin</a>
