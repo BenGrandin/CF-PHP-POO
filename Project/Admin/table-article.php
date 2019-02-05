@@ -105,7 +105,7 @@
 						</div>
 						<div class="row" id="content">
 							<!-- c'était pas difficile bordel, tu as passé du temps a tout faire mais même pas fichu de faire ce lien !! !-->
-							<button class="btn btn-success" id="btn_add">New</button>
+							<button class="btn btn-success" id="btn_add">New article</button>
 						
                         <table class="table table-striped table-dark">
                         <table class="table table-striped">
