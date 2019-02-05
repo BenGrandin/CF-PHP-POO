@@ -313,7 +313,7 @@ $Fr->addCitizen(10); // 60
         </div>
         <div class="row">
             <div class="col-1"></div>
-            
+
             <div class="col-5 explanations">
 
             <p>"parent" permet d'appeler une fonction ou une variable issue d'une classe parente.</p>
@@ -354,7 +354,7 @@ Class Region extends Pays
         // Retourne la variable $name de la classe parente
         return parent::$name;
     }
-}   
+}
 
 $bretagne = new Region("Bretagne");
 $bretagne->getRegion(); // Bretagne
@@ -383,7 +383,7 @@ $bretagne->getPays(); // France
         protected $name;
         protected $flag;
         protected $language;
-        
+
         public function describe()
         {
         $description =  $name
@@ -397,7 +397,7 @@ $bretagne->getPays(); // France
     Class Region extends Pays{}
 
 
-    $bretagne = new.Region("bretagne", 
+    $bretagne = new.Region("bretagne",
           "drapeauBreton", "breton");
 
     $bretagne->describe();
@@ -437,7 +437,7 @@ $bretagne->getPays(); // France
       public function talk(string $string);
     }
 
-    class Personnage implements Movable { }
+    class Personnage implements Red_phone { }
         </code></pre>
             </div>
             <div class="col-1"></div>
@@ -455,7 +455,7 @@ $bretagne->getPays(); // France
             <div class="col-1"></div>
             <div class="col-4 examples">
                 <pre><code class="php">
-    // SANS autoloader 
+    // SANS autoloader
     require "class/Pays.php";
     require "class/Region.php";
     //require ......
@@ -464,11 +464,11 @@ $bretagne->getPays(); // France
     $Bretagne = new Region();
 
     // Avec autoloader
-    function my_autoloader($class) 
+    function my_autoloader($class)
     {
         // class/France.php -- cas 1
         // class/Region;php -- cas 2
-        include 'class/' . $class . '.php'; 
+        include 'class/' . $class . '.php';
     }
 
     spl_autoload_register('my_autoloader');
@@ -504,17 +504,17 @@ $bretagne->getPays(); // France
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    
+
     <script>
         $(document).ready(function() {
             $('#navbar a').click(function(e) {
-                
+
                 var targetHref = $(this).attr('href');
-                
+
                 $('html, body').animate({
                     scrollTop: $(targetHref).offset().top
                 }, 1000);
-                
+
                 e.preventDefault();
             });
         });
