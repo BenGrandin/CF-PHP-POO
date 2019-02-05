@@ -117,9 +117,15 @@ function describe($name, $flag, $language)
                     <div class="col-1"></div>
                     <div class="col-4 examples">
                         <pre><code>
-  function setName (x)      { $this->name = x;}
-  function setFlag (x)      { $this->flag = x;}
-  function setLanguage (x)  { $this->name = x;}
+  function setName (x)      {
+    if(is_string($name)) $this->name = x;
+  }
+  function setFlag (x)      {
+    if(is_string($name)) $this->flag = x;
+  }
+  function setLanguage (x)  {
+    if(is_string($name)) $this->name = x;
+  }
                           </code></pre>
                     </div>
                     <div class="col-1"></div>
@@ -144,7 +150,7 @@ function describe($name, $flag, $language)
                         <pre><code>
   function getName      { return $this->name;}
   function getFlag      { return $this->flag;}
-  function getLanguage  { return $this->name;}
+  function getLanguage  { return $this->language;}
                         </code></pre>
                     </div>
                     <div class="col-1"></div>
@@ -159,12 +165,16 @@ function describe($name, $flag, $language)
                     <div class="col-1"></div>
                     <div class="col-4 examples">
                         <pre><code>
-
+function __construct($name, $flag, $language){
+  $this->setName($name);
+  $this->setFlag($flag);
+  $this->setLanguage($language);
+}
                         </code></pre>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                        <p>Le constructeur permet d'instancier un nouvel objet à partir de la classe. En PHP, il est toujours définit par la fonction __constructor() .</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -177,12 +187,21 @@ function describe($name, $flag, $language)
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                        <p>L'hydratation sert à définir les valeurs des attributs grâce à un tableau.</p>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-4 examples">
-                        <pre><code>function lorem() {
-                            echo "salut"; }</code></pre>
+                        <pre><code>
+public function hydrate(array $data){
+  foreach($data as $key => $value){
+    $method = 'set'.ucfirst($key);
+    if(method_exists( $this, $method)){
+      $this->$method($value);
+    }
+
+  }
+}
+                        </code></pre>
                     </div>
                     <div class="col-1"></div>
                 </div>
