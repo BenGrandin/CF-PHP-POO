@@ -304,11 +304,40 @@ public function hydrate(array $data){
         <div class="row">
             <div class="col-1"></div>
             <div class="col-4 examples">
-                <pre><code class="php">echo "salut";</code></pre>
+                <pre><code class="php">
+    Class Pays {
+        protected $name;
+        protected $flag;
+        protected $language;
+
+        public function describe()
+        {
+        $description =  $name
+          + " parle " + $language
+          + " a le drapeau " + $drapeau;
+
+        return $description;
+        }
+    }
+
+    Class France extends Pays
+    {
+        protected $name = "France";
+        protected $flag;
+        protected $language = " Français";
+    }   
+    $paysF = new.France();
+    $paysF->describe();
+                </code></pre>
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p></div>
+            <p>L'héritage permet à un classe B fille d'hérité d'une class A Mère les attributs et méthodes de celle-ci</p>
+            <p>Si l'on déclare des méthodes dans la classe A, et qu'on crée une instance de la classe B,</p>
+            <p>alors on pourra appeler n'importe quelle méthode déclarée dans la classe A du moment qu'elle est publique</p>
+            <p></p>
+            <p>L'attribut <i>Protected</i> des méthodes signifie que les méthodes sont accèssible uniquement à l'intérieur des classes.</p> 
+            </div>
             <div class="col-1"></div>
         </div>
 
