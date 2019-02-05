@@ -219,17 +219,26 @@ public function hydrate(array $data){
         <!-- Self -->
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3>Self</h3>
+                    <h3>Static</h3>
                 </div>
             </div>
             <div class="row">
             <div class="col-1"></div>
             <div class="col-4 examples">
-                <pre><code class="php">echo "salut";</code></pre>
+                <pre><code class="php">
+class Pays {
+    public function static helloCountry($name) {
+        return "Bonjour " + $name + " ! ";
+    }
+}
+
+// Bonjour France !
+echo Pays::helloCountry("France");
+                </code></pre>
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p></div>
+            <p>Une méthode statique permet d'appeler une fonction dans une classe sans devoir l'instancier.</p></div>
             <div class="col-1"></div>
         </div>
 
@@ -237,22 +246,61 @@ public function hydrate(array $data){
          <!-- Static -->
             <div class="row">
                 <div class="col-12 text-center">
-                    <h3>Static</h3>
+                    <h3>Self</h3>
                 </div>
             </div>
             <div class="row">
             <div class="col-1"></div>
             <div class="col-5 explanations">
-                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                <p>la variable self est une variable qui permet d'utiliser des variables ou des fonctions statiques.</p>
+                <p>Cette dernière n'est utilisable uniquement dans des fonctions statiques</p>
             </div>
             <div class="col-1"></div>
             <div class="col-4 examples">
-                <pre><code>function lorem() {
-                    echo "salut"; }</code></pre>
+                <pre><code>
+class Pays {
+    private static $_pays = "France";
+
+    public static function showCountry() {
+        return self::$_pays;
+    }
+}
+
+Pays::showCountry();
+                </code></pre>
             </div>
             <div class="col-1"></div>
         </div>
+         <!-- This -->
+         <div class="row">
+            <div class="col-12 text-center">
+                <h3>This</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-5 explanations">
+                <p>Cette variable permet de travailler sur des variables issues d'une classe.</p>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-4 examples">
+                <pre><code>
+class Pays {
+    private $_name = "France";
+    private $_citizen = 50;
 
+    function addCitizen($nb) {
+        $this->name += nb;
+        return $this->name;
+    }
+}
+
+$Fr = new Pays();
+$Fr->addCitizen(10); // 60
+                </code></pre>
+            </div>
+            <div class="col-1"></div>
+        </div>
 
         <!-- Parent -->
         <div class="row">
@@ -263,34 +311,57 @@ public function hydrate(array $data){
         <div class="row">
             <div class="col-1"></div>
             <div class="col-4 examples">
-                <pre><code class="php">echo "salut";</code></pre>
+                <pre><code class="php">
+Class Pays {
+    protected $name = "France";
+    protected $flag;
+    protected $language;
+
+    public function describe()
+    {
+        $description =  $name
+        + " parle " + $language
+        + " a le drapeau " + $drapeau;
+
+        return $description;
+    }
+}
+
+Class Region extends Pays
+{
+    protected $name;
+    protected $flag;
+    protected $language;
+
+    function __construct($name) {
+        $this->name = $name;
+    }
+
+    public function getRegion() {
+        return $this-name;
+    }
+
+    public function getPays() {
+        // Retourne la variable $name de la classe parente
+        return parent::$name;
+    }
+}   
+
+$bretagne = new Region("Bretagne");
+$bretagne->getRegion(); // Bretagne
+$bretagne->getPays(); // France
+                </code></pre>
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
 
-            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p></div>
+            <p>parent permet d'appeler une fonction ou une variable issue d'une classe parente.</p>
+        <p>Par exemple si une fonction est déclarées à la fois dans une classe A et dans une classe B héritée de la classe A, l'utilisation de parent permettra le traitement de la fonction ou variable de la classe A (et non de la classe B).</p></div>
             <div class="col-1"></div>
         </div>
 
 
-         <!-- This -->
-         <div class="row">
-            <div class="col-12 text-center">
-                <h3>This</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-5 explanations">
-                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
-            </div>
-            <div class="col-1"></div>
-            <div class="col-4 examples">
-                <pre><code>function lorem() {
-                    echo "salut"; }</code></pre>
-            </div>
-            <div class="col-1"></div>
-        </div>
+
 
 
     </section>
