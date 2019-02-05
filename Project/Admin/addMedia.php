@@ -1,22 +1,22 @@
-		<!-- Switchery css -->
-		<link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
-		
-		<!-- Custom CSS -->
-		<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+<!-- Switchery css -->
+<link href="assets/plugins/switchery/switchery.min.css" rel="stylesheet" />
 
-		<!-- Modernizr -->
-		<script src="assets/js/modernizr.min.js"></script>
+<!-- Custom CSS -->
+<link href="assets/css/style.css" rel="stylesheet" type="text/css" />
 
-		<!-- jQuery -->
-		<script src="assets/js/jquery.min.js"></script>
+<!-- Modernizr -->
+<script src="assets/js/modernizr.min.js"></script>
 
-		<!-- Moment -->
-		<script src="assets/js/moment.min.js"></script>
-		
-		<!-- BEGIN CSS for this page -->
-		<link href="assets/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
-		<link href="assets/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
-		<!-- END CSS for this page -->
+<!-- jQuery -->
+<script src="assets/js/jquery.min.js"></script>
+
+<!-- Moment -->
+<script src="assets/js/moment.min.js"></script>
+
+<!-- BEGIN CSS for this page -->
+<link href="assets/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
+<link href="assets/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
+<!-- END CSS for this page -->
 
 <div class="row">
 			
