@@ -88,11 +88,13 @@
                     <div class="col-1"></div>
                     <div class="col-4 examples">
                         <pre><code>
-public function describe($name, $flag, $language)
-{
-$pays = $name + " " + $flag + " " + $language;
-return $pays;
-}
+function describe($name, $flag, $language)
+    {
+        $pays = $name + " parle " 
+        + $language + " a le drapeau " + $flag;
+    
+        return $pays;
+    }
                         </code></pre>
                     </div>
                     <div class="col-1"></div>
