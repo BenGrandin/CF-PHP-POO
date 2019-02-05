@@ -3,12 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
 
     <title>POO PHP by Coding Factory</title>
 </head>
@@ -48,19 +49,26 @@
                     <div class="col-1"></div>
                     <div class="col-11"><h2>Les classes et méthodes version procédurale et POO</h2></div>
                 </div>
-                
+
+                <!-- POO's way -->
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-4 examples">
                         <pre><code class="php">
-            Class Pays {
-                protected $flag; 
-                            
-                public function describe()
-                {
-                    return "String";
-                }
-            }
+    Class Pays {
+        protected $name;
+        protected $flag;
+        protected $language;
+
+        public function describe()
+        {
+        $description =  $name
+          + " parle " + $language
+          + " a le drapeau " + $drapeau;
+
+        return $description;
+        }
+    }
                         </code></pre>
                     </div >
                     <div class="col-1"></div>
@@ -71,6 +79,7 @@
                     <div class="col-1"></div>
                 </div>
 
+                <!-- Functionnel's way -->
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
@@ -105,12 +114,15 @@ return $pays;
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-4 examples">
-                        <pre><code>function lorem() {
-                            echo "salut"; }</code></pre>
+                        <pre><code>
+  function setName (x)      { $this->name = x;}
+  function setFlag (x)      { $this->flag = x;}
+  function setLanguage (x)  { $this->name = x;}
+                          </code></pre>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                        <p>Les setters servent à définir les attributs.</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -123,12 +135,15 @@ return $pays;
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                        <p>Les getters servent à accéder aux attributs.</p>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-4 examples">
-                        <pre><code>function lorem() {
-                            echo "salut"; }</code></pre>
+                        <pre><code>
+  function getName      { return $this->name;}
+  function getFlag      { return $this->flag;}
+  function getLanguage  { return $this->name;}
+                        </code></pre>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -141,8 +156,9 @@ return $pays;
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-4 examples">
-                        <pre><code>function lorem() {
-                            echo "salut"; }</code></pre>
+                        <pre><code>
+
+                        </code></pre>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
@@ -230,7 +246,7 @@ return $pays;
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            
+
             <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p></div>
             <div class="col-1"></div>
         </div>
@@ -328,7 +344,7 @@ return $pays;
             </div>
         </div>
     </section>
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
