@@ -104,7 +104,7 @@
 									</div>
 						</div>
 						<div class="row">
-							<button type="button" class="btn btn-success" id="btn_add">AJOUTER UN ADMINISTRATEUR DU SITE ONEPAGE</button>
+							<button type="button" class="btn btn-success" id="btn_add">New User</button>
 						</div>
                         <table class="table table-striped table-dark">
                         <table class="table table-striped">

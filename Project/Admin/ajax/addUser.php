@@ -21,7 +21,7 @@
 								  </div>
 								  <div class="form-group row">
 									<div class="col-sm-10">
-									  <button type="submit" class="btn btn-primary">Ajouter l'utilisateur et le rendre administrateur du site internet</button>
+									  <button type="submit" class="btn btn-primary">Add User</button>
 									</div>
 								  </div>
 								</form>

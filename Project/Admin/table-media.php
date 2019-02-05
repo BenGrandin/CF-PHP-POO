@@ -117,7 +117,7 @@
 						{
 ?>						<div class="row">
 							<form action="" method="POST">
-								<button type="submit" name="New" class="btn btn-success">New</button>
+								<button type="submit" name="New" class="btn btn-success">New Media</button>
 							</form>
 
 						</div>
