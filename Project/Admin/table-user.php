@@ -62,7 +62,7 @@
 			<ul>
 					
 					<li class="submenu">
-                        <a href="#"><i class="fa fa-fw fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
+                        <a href="#" class="active"><i class="fa fa-fw fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
 							<ul class="list-unstyled">
 								<li><a href="table-article.php">Article</a></li>
                                 <li><a href="table-media.php">Media</a></li>

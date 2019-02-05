@@ -253,8 +253,8 @@ echo Pays::helloCountry("France");
             <div class="row">
             <div class="col-1"></div>
             <div class="col-5 explanations">
-                <p>la variable self est une variable qui permet d'utiliser des variables ou des fonctions statiques.</p>
-                <p>Cette dernière n'est utilisable uniquement dans des fonctions statiques</p>
+                <p>"self" est une variable qui permet d'utiliser des attributss ou des fonctions statiques.</p>
+                <p>Cette dernière n'est utilisable uniquement que dans des fonctions statiques</p>
             </div>
             <div class="col-1"></div>
             <div class="col-4 examples">
@@ -316,7 +316,7 @@ $Fr->addCitizen(10); // 60
             
             <div class="col-5 explanations">
 
-            <p>parent permet d'appeler une fonction ou une variable issue d'une classe parente.</p>
+            <p>"parent" permet d'appeler une fonction ou une variable issue d'une classe parente.</p>
         <p>Par exemple si une fonction est déclarées à la fois dans une classe A et dans une classe B héritée de la classe A, l'utilisation de parent permettra le traitement de la fonction ou variable de la classe A (et non de la classe B).</p></div>
             <div class="col-1"></div>
             <div class="col-4 examples">
