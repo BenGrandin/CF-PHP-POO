@@ -90,9 +90,9 @@
                         <pre><code>
 function describe($name, $flag, $language)
     {
-        $pays = $name + " parle " 
+        $pays = $name + " parle "
         + $language + " a le drapeau " + $flag;
-    
+
         return $pays;
     }
                         </code></pre>
@@ -325,7 +325,7 @@ public function hydrate(array $data){
         protected $name = "France";
         protected $flag;
         protected $language = " Français";
-    }   
+    }
     $paysF = new.France();
     $paysF->describe();
                 </code></pre>
@@ -336,7 +336,7 @@ public function hydrate(array $data){
             <p>Si l'on déclare des méthodes dans la classe A, et qu'on crée une instance de la classe B,</p>
             <p>alors on pourra appeler n'importe quelle méthode déclarée dans la classe A du moment qu'elle est publique</p>
             <p></p>
-            <p>L'attribut <i>Protected</i> des méthodes signifie que les méthodes sont accèssible uniquement à l'intérieur des classes.</p> 
+            <p>L'attribut <i>Protected</i> des méthodes signifie que les méthodes sont accèssible uniquement à l'intérieur des classes.</p>
             </div>
             <div class="col-1"></div>
         </div>
@@ -353,12 +353,18 @@ public function hydrate(array $data){
          <div class="row">
             <div class="col-1"></div>
             <div class="col-5 explanations">
-                <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p>
+                <p>Un Interface permet de définir une ou plusieurs méthodes obligatoires pour une ou plusieurs Classe.</p>
             </div>
             <div class="col-1"></div>
             <div class="col-4 examples">
-                <pre><code>function lorem() {
-                    echo "salut"; }</code></pre>
+                <pre><code>
+    interface Red_phone
+    {
+      public function talk(string $string);
+    }
+
+    class Personnage implements Movable { }
+        </code></pre>
             </div>
             <div class="col-1"></div>
         </div>
