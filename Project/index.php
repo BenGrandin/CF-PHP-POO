@@ -3,11 +3,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet"
       href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
-    
+
 
     <title>POO PHP by Coding Factory</title>
 </head>
@@ -47,19 +47,26 @@
                     <div class="col-1"></div>
                     <div class="col-11"><h2>Les classes et méthodes version procédurale et POO</h2></div>
                 </div>
-                
+
+                <!--  -->
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-4 examples">
                         <pre><code class="php">
-            Class Pays {
-                protected $flag; 
-                            
-                public function describe()
-                {
-                    return "String";
-                }
-            }
+    Class Pays {
+        protected $name;
+        protected $flag;
+        protected $language;
+
+        public function describe()
+        {
+        self $description =  $name
+          + " parle " + $language
+          + " a le drapeau " + $drapeau;
+
+        return "$description";
+        }
+    }
                         </code></pre>
                     </div >
                     <div class="col-1"></div>
@@ -70,6 +77,7 @@
                     <div class="col-1"></div>
                 </div>
 
+                <!-- Setters -->
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
@@ -289,7 +297,7 @@
             </div>
         </div>
     </section>
-    
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
