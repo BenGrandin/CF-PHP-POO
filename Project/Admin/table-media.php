@@ -86,6 +86,7 @@
     <div class="content-page">
 	
 		<!-- Start content -->
+
         <div class="content">
             
 			<div class="container-fluid">
@@ -102,8 +103,27 @@
 											</div>
 									</div>
 						</div>
-						<div class="row">
-							<button type="button" class="btn btn-success">New</button>
+<?php					if(isset($_POST['New'])) //si tu cliques sur New
+						{
+							require_once('addMedia.php');
+							//requete objet PDO SQL INSERT
+						}
+						else if(isset($_POST['Edit']))
+						{
+							require_once('editMedia.php');
+							//requete objet PDO SQL UPDATE
+						}
+						else if(isset($_POST['Delete']))
+						{
+							//requete objet PDO SQL DELETE
+						}
+						else
+						{
+?>						<div class="row">
+							<form action="" method="POST">
+								<button type="submit" name="New" class="btn btn-success">New</button>
+							</form>
+
 						</div>
                         <table class="table table-striped table-dark">
                         <table class="table table-striped">
@@ -121,12 +141,17 @@
                             <td>?</td>
 							<td>?</td>
 							<td>
-								<button type="button" class="btn btn-primary">Edit</button>
-								<button type="button" class="btn btn-danger">Delete</button>
+							<form action="" method="POST">
+								<button type="submit" name="Edit" class="btn btn-primary">Edit</button>
+							
+								<button type="submit" name="Delete" class="btn btn-danger">Delete</button>
+							</form>
 							</td>
                         </tbody>
                         </table>
+<?php						}
 
+?>
             </div>
 			<!-- END container-fluid -->
 
