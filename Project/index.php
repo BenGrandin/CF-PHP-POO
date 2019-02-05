@@ -279,10 +279,6 @@ Pays::showCountry();
         </div>
         <div class="row">
             <div class="col-1"></div>
-            <div class="col-5 explanations">
-                <p>Cette variable permet de travailler sur des variables issues d'une classe.</p>
-            </div>
-            <div class="col-1"></div>
             <div class="col-4 examples">
                 <pre><code>
 class Pays {
@@ -300,6 +296,12 @@ $Fr->addCitizen(10); // 60
                 </code></pre>
             </div>
             <div class="col-1"></div>
+
+            <div class="col-5 explanations">
+                <p>Cette variable permet de travailler sur des variables issues d'une classe.</p>
+            </div>
+
+            <div class="col-1"></div>
         </div>
 
         <!-- Parent -->
@@ -309,6 +311,12 @@ $Fr->addCitizen(10); // 60
             </div>
         </div>
         <div class="row">
+            <div class="col-1"></div>
+            
+            <div class="col-5 explanations">
+
+            <p>parent permet d'appeler une fonction ou une variable issue d'une classe parente.</p>
+        <p>Par exemple si une fonction est déclarées à la fois dans une classe A et dans une classe B héritée de la classe A, l'utilisation de parent permettra le traitement de la fonction ou variable de la classe A (et non de la classe B).</p></div>
             <div class="col-1"></div>
             <div class="col-4 examples">
                 <pre><code class="php">
@@ -352,12 +360,6 @@ $bretagne->getRegion(); // Bretagne
 $bretagne->getPays(); // France
                 </code></pre>
             </div>
-            <div class="col-1"></div>
-            <div class="col-5 explanations">
-
-            <p>parent permet d'appeler une fonction ou une variable issue d'une classe parente.</p>
-        <p>Par exemple si une fonction est déclarées à la fois dans une classe A et dans une classe B héritée de la classe A, l'utilisation de parent permettra le traitement de la fonction ou variable de la classe A (et non de la classe B).</p></div>
-            <div class="col-1"></div>
         </div>
 
 
