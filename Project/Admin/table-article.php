@@ -103,26 +103,28 @@
 											</div>
 									</div>
 						</div>
+						<div class="row">
+							<button type="button" class="btn btn-success">New</button>
+						</div>
                         <table class="table table-striped table-dark">
                         <table class="table table-striped">
                         <thead>
                             <tr>
                             <th scope="col">ID</th>
                             <th scope="col">TITLE</th>
-                            <th scope="col">CONTENT</th>
+							<th scope="col">CONTENT</th>
+							<th scope="col">OPTIONS</th>
                             </tr>
-						</thead>
+	                    </thead>
                         <tbody>
                             <tr>
                             <th scope="row">1</th>
                             <td>?</td>
-                            <td>?</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>?</td>
-                            <td>?</td>
-                            </tr>
+							<td>?</td>
+							<td>
+								<button type="button" class="btn btn-primary">Edit</button>
+								<button type="button" class="btn btn-danger">Delete</button>
+							</td>
                         </tbody>
                         </table>
 
