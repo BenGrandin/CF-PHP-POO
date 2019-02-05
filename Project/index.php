@@ -380,7 +380,7 @@ $bretagne->getPays(); // France
         protected $name;
         protected $flag;
         protected $language;
-
+        
         public function describe()
         {
         $description =  $name
@@ -391,19 +391,19 @@ $bretagne->getPays(); // France
         }
     }
 
-    Class France extends Pays
-    {
-        protected $name = "France";
-        protected $flag;
-        protected $language = " Français";
-    }
-    $paysF = new.France();
-    $paysF->describe();
+    Class Region extends Pays{}
+
+
+    $bretagne = new.Region("bretagne", 
+          "drapeauBreton", "breton");
+
+    $bretagne->describe();
+
                 </code></pre>
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p>L'héritage permet à un classe B fille d'hérité d'une class A Mère les attributs et méthodes de celle-ci</p>
+            <p><i>L'héritage</i> permet à un classe B fille d'hérité d'une class A Mère les attributs et méthodes de celle-ci</p>
             <p>Si l'on déclare des méthodes dans la classe A, et qu'on crée une instance de la classe B,</p>
             <p>alors on pourra appeler n'importe quelle méthode déclarée dans la classe A du moment qu'elle est publique</p>
             <p></p>
@@ -451,11 +451,35 @@ $bretagne->getPays(); // France
             <div class="row">
             <div class="col-1"></div>
             <div class="col-4 examples">
-                <pre><code class="php">echo "salut";</code></pre>
+                <pre><code class="php">
+    // SANS autoloader 
+    require "class/Pays.php";
+    require "class/Region.php";
+    //require ......
+
+    $France = new Pays();
+    $Bretagne = new Region();
+
+    // Avec autoloader
+    function my_autoloader($class) 
+    {
+        // class/France.php -- cas 1
+        // class/Region;php -- cas 2
+        include 'class/' . $class . '.php'; 
+    }
+
+    spl_autoload_register('my_autoloader');
+
+    $France = new France(); // -- cas 1
+    $Bretagne = new Region(); // -- cas 2
+                </code></pre>
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMaker.</p></div>
+            <p> <i>L'autoloader</i> est une fonction permettant de charger automatiquement les classes,</p>
+            <p>ce qui permet de ne pas appeler les fichiers de classe.</p>
+            <p>Pour ce faire, il appelera une fonction (ici my_autoloader) qui s'enclenchera dès qu'on fera appel à une classe.</p>
+            </div>
             <div class="col-1"></div>
         </div>
 
