@@ -192,7 +192,7 @@
 				type: "GET",
 				success: function(data) {
 					$("#content").html(data);
-				}
+				},
 				error : function(error) {
 					alert("Erreur");
 				}
