@@ -16,12 +16,12 @@
 <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <img src="./assets/logo.png" alt="" style="width: 50px; margin-right: 50px;">
+        <img src="./media/logo.png" alt="" style="width: 50px; margin-right: 50px;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav" id="navbar">
                 <a class="nav-item nav-link active" href="#">Accueil <span class="sr-only">(current)</span></a>
                 <a class="nav-item nav-link" href="#class">Classes et méthodes</a>
                 <a class="nav-item nav-link" href="#acess">Acesseurs, mutateurs, constructeur et hydrate</a>
@@ -33,6 +33,7 @@
             </div>
         </div>
     </nav>
+
     <!-- Header = Story 1 --->
 
         <div class="jumbotron jumbotron-fluid">
@@ -79,7 +80,7 @@
                     <div class="col-1"></div>
                 </div>
 
-                <!-- Functionnel's way -->
+                <!-- Functional's way -->
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
@@ -498,11 +499,26 @@ $bretagne->getPays(); // France
         </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="vendor/jquery-3.3.1.min.js"></script> <!-- -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#navbar a').click(function(e) {
+                
+                var targetHref = $(this).attr('href');
+                
+                $('html, body').animate({
+                    scrollTop: $(targetHref).offset().top
+                }, 1000);
+                
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 
 </html>
