@@ -79,13 +79,14 @@ class TableManager{
     }
 
     public function query($statement, $arg = []) {
+
         try {
             $req = $this->_db->prepare($statement);
             $req->execute($arg);
-        }catch(Exception $e) {
+        }
+        catch(Exception $e) {
             return $e;
         }
-
         return $req;
     }
 

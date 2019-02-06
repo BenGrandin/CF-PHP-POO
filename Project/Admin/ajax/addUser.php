@@ -1,3 +1,11 @@
+<?php
+function my_autoloader($class)
+{
+	require '../../class/' . $class . '.php';
+}
+spl_autoload_register('my_autoloader');
+?>						
+
 						<div class="card mb-3">
 							<div class="card-header">
 								<h3><i class="fa fa-check-square-o"></i>Ajouter un utilisateur</h3>
