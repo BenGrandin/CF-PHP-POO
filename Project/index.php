@@ -39,8 +39,11 @@
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Bonjour.</h1>
-                <p class="lead">Partially, but it also obeys your commands. I call it luck. As you wish. Your eyes can deceive you. Don't trust them.</p>
-                <p class="lead">You don't believe in the Force, do you? You don't believe in the Force, do you? <strong> What!?</strong> <em> You're all clear, kid.</em> Let's blow this thing and go home!</p>
+                <p class="lead">Le projet des 4 Fantastiques à pour objet de présenter de manière concrète la POO en PHP. Ce site est entièrement fabriqué en orienté objet.</p>
+                <p class="lead">Ce projet est fait dans les locaux de la Coding Factory par Benjamin, Doryan, Cédric et (Florian)</p>
+                <p class="lead">Το έργο Fantastic 4 στοχεύει να παρουσιάσει συγκεκριμένα το OOP στην PHP. Αυτός ο ιστότοπος έχει κατασκευαστεί εξ ολοκλήρου σε αντικειμενοστραφή.
+
+Το έργο αυτό γίνεται στις εγκαταστάσεις του Εργοστασίου Κωδικοποίησης από τον Benjamin, Doryan, Cédric και (Florian)</p>
             </div>
         </div>
 
