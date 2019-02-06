@@ -494,10 +494,10 @@ $bretagne->getPays(); // France
     <section class="container-fluid" id="propos">
         <div class="row">
             <div class="col-12 d-flex justify-content-around">
-                <a href="https://github.com/BenGrandin">Benjamin Grandin</a>
-                <a href="https://github.com/DoryanLievre">Doryan Lièvre</a>
-                <a href="https://github.com/CedricLphn">Cedric Leprohon</a>
-                <a href="https://github.com/Flow2dot0">Florian Gustin</a>
+                <a href="https://github.com/BenGrandin"><h4>Benjamin Grandin</h4></a>
+                <a href="https://github.com/DoryanLievre"><h4>Doryan Lièvre</h4></a>
+                <a href="https://github.com/CedricLphn"><h4>Cedric Leprohon</h4></a>
+                <a href="https://github.com/Flow2dot0"><h4>Florian Gustin</h4></a>
             </div>
         </div>
     </section>

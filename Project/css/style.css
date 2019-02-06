@@ -30,3 +30,29 @@ h3{
     letter-spacing: 5px;
     font-weight: bold;
 }
+
+@media screen and (max-width: 768px)
+{
+    h1{
+        font-size: 5vw !important;
+    }
+    h2{
+        font-size: 3vw !important;
+
+    }
+    h3{
+        font-size: 2vw !important;
+
+    }
+    p{
+        font-size: 1.5vw !important;
+
+    }
+    code{
+        font-size: 1vw !important;
+    }
+    h4{
+        font-size: 1.5vw !important;
+    }
+
+}
