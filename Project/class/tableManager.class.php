@@ -24,7 +24,7 @@ class TableManager{
 
     public function create($objetX)
     {
-        if(get_class(strtolower($objetX)) == "user")
+        if(strtolower(get_class($objetX)) == "user")
         {
             $db = $this->_db;
             $db->prepare('INSERT name, password INTO user VALUES (name = :name, password = :password');
@@ -34,7 +34,7 @@ class TableManager{
 
             $db->execute();
         }
-        else if(get_class(strtolower($objetX)) == "article")
+        else if(strtolower(get_class($objetX)) == "article")
         {
             $db = $this->_db;
             $db->prepare('INSERT title, content INTO article VALUES (title = :title, content = :content');
@@ -44,7 +44,7 @@ class TableManager{
 
             $db->execute();
         }
-        else if(get_class(strtolower($objetX)) == "media")
+        else if(strtolower(get_class($objetX)) == "media")
         {
             $db = $this->_db;
             $db->prepare('INSERT name, type INTO media VALUES (name = :name, type = :type');
@@ -78,19 +78,39 @@ class TableManager{
 
     }
 
-    public function get()
-    {
+    public function query($statement, $arg = []) {
 
+        try {
+            $req = $this->_db->prepare($statement);
+            $req->execute($arg);
+        }
+        catch(Exception $e) {
+            return $e;
+        }
+        return $req;
+    }
+
+    public function get(int $id)
+    {
+        
+        $req = $this->query("SELECT * FROM ".strtolower(get_class($this))." WHERE id = :id",
+         ["id" => $id]);
+        $req->setFetchMode(PDO::FETCH_OBJ);
+
+        return $req->fetch();
     }
 
     public function getList()
     {
+        $req = $this->query("SELECT * FROM". strtolower(get_class($this)));
+       $req->setFetchMode(PDO::FETCH_OBJ);
 
+       return $req->fetchAll();
     }
 
     public function update($objetX)
     {
-        if(get_class(strtolower($objetX)) == "user")
+        if(strtolower(get_class($objetX)) == "user")
         {
             $db = $this->_db;
             $db->prepare('UPDATE user SET name = :name, password = :password WHERE id = :id');
@@ -101,7 +121,7 @@ class TableManager{
 
             $db->execute();
         }
-        else if(get_class(strtolower($objetX)) == "article")
+        else if(strtolower(get_class($objetX)) == "article")
         {
             $db = $this->_db;
             $db->prepare('UPDATE article SET title = :title, content = :content WHERE id = :id');
@@ -112,7 +132,7 @@ class TableManager{
 
             $db->execute();
         }
-        else if(get_class(strtolower($objetX)) == "media")
+        else if(strtolower(get_class($objetX)) == "media")
         {
             $db = $this->_db;
             $db->prepare('UPDATE media SET name = :name, type = :type WHERE id = :id');
@@ -127,7 +147,7 @@ class TableManager{
 
     public function delete()
     {
-        if(get_class(strtolower($objetX)) == "user")
+        if(strtolower(get_class($objetX)) == "user")
         {
             $db = $this->_db;
             $db->prepare('DELETE FROM user WHERE id= :id');
@@ -136,7 +156,7 @@ class TableManager{
 
             $db->execute();
         }
-        else if(get_class(strtolower($objetX)) == "article")
+        else if(strtolower(get_class($objetX)) == "article")
         {
             $db = $this->_db;
             $db->prepare('DELETE FROM article WHERE id= :id');
@@ -145,7 +165,7 @@ class TableManager{
 
             $db->execute();
         }
-        else if(get_class(strtolower($objetX)) == "media")
+        else if(strtolower(get_class($objetX)) == "media")
         {
             $db = $this->_db;
             $db->prepare('DELETE FROM media WHERE id= :id');

@@ -1,3 +1,10 @@
+<?php
+function my_autoloader($class)
+{
+	require '../class/' . $class . '.php';
+}
+spl_autoload_register('my_autoloader');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,3 +1,10 @@
+<?php
+function my_autoloader($class)
+{
+	require '../class/' . $class . '.php';
+}
+spl_autoload_register('my_autoloader');
+?>
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/images/favicon.ico">
 
