@@ -7,10 +7,18 @@ $article = new Article();
 
 if(isset($_POST['titre']) && isset($_POST['content'])) {
 	if(!empty($_POST['titre']) && !empty($_POST['content'])) {
+
 		$article->setTitle(htmlspecialchars($_POST['titre']));
 		$article->setContent($_POST['content']);
 
-		$article->create();
+
+		if($_POST['id'] != false) {
+			$article->setId($_POST['id']);
+			$article->update();
+			
+		}else {	
+			$article->create();
+		}
 	}
 }
 
@@ -47,6 +55,31 @@ if(isset($_GET['id'])) {
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
+
+
+		<script src="assets/js/modernizr.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/moment.min.js"></script>
+				
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+
+		<script src="assets/js/detect.js"></script>
+		<script src="assets/js/fastclick.js"></script>
+		<script src="assets/js/jquery.blockUI.js"></script>
+		<script src="assets/js/jquery.nicescroll.js"></script>
+
+		<!-- App js -->
+		<script src="assets/js/pikeadmin.js"></script>
+
+		<!-- BEGIN Java Script for this page -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+			<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+			<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+			<!-- Counter-Up-->
+			<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+			<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>	
 		
 </head>
 
@@ -151,10 +184,26 @@ if(isset($_GET['id'])) {
                             <td><?= $data["title"]; ?></td>
 							<td><?= $data["content"]; ?></td>
 							<td>
-								<button type="button" id="<?=$data['id'];?>" class="btn btn-primary">Edit</button>
+								<button type="button" id="<?=$data['id'];?>" class="btn btn-primary edit">Edit</button>
 								<a href="?id=<?=$data['id'];?>"  class="btn btn-danger">Delete</a>
 							</td>
                         </tbody>
+						<script>
+							$("#<?= $data['id'] ?>").on("click", function() {
+								$.ajax({
+									url: 'ajax/addArticle.php',
+									type: "POST",
+									data: "id=<?= $data['id']; ?>",
+									dataType: "html",
+									success: function(data) {
+										$("#content").html(data);
+									},
+									error: function(e) {
+										alert(e);
+									}
+								})
+							});
+						</script>
 						<?php
 						}
 						?>
@@ -180,30 +229,7 @@ if(isset($_GET['id'])) {
 
 </div>
 <!-- END main -->
-
-<script src="assets/js/modernizr.min.js"></script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/moment.min.js"></script>
 		
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-
-<script src="assets/js/detect.js"></script>
-<script src="assets/js/fastclick.js"></script>
-<script src="assets/js/jquery.blockUI.js"></script>
-<script src="assets/js/jquery.nicescroll.js"></script>
-
-<!-- App js -->
-<script src="assets/js/pikeadmin.js"></script>
-
-<!-- BEGIN Java Script for this page -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
-	<!-- Counter-Up-->
-	<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>			
 
 	<script>
 		$(document).ready(function() {
@@ -216,6 +242,8 @@ if(isset($_GET['id'])) {
 				time: 600
 			});
 		} );		
+
+		
 
 		$("#btn_add").on("click", function() {
 			$.ajax({

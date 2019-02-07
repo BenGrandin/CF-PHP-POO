@@ -43,6 +43,10 @@ abstract class Table{
         $this->tm->create($this);
     }
 
+    public function update() {
+        $this->tm->update($this);
+    }
+
     public function setId(int $id) { $this->id = $id;}
     public function getId(){ return $this->id; }
 }

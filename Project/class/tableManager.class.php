@@ -116,35 +116,38 @@ class TableManager{
         if(strtolower(get_class($objetX)) == "user")
         {
             $db = $this->_db;
-            $db->prepare('UPDATE user SET name = :name, password = :password WHERE id = :id');
+            $req = $db->prepare('UPDATE user SET name = :name, password = :password WHERE id = :id');
 
-            $db->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
-            $db->bindValue(':password', password_hash($objetX->getPassword(), PASSWORD_DEFAULT), PDO::PARAM_STR);
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_INT);
+            $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
+            $req->bindValue(':password', password_hash($objetX->getPassword(), PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_INT);
 
-            $db->execute();
+            $req->execute();
         }
         else if(strtolower(get_class($objetX)) == "article")
         {
             $db = $this->_db;
-            $db->prepare('UPDATE article SET title = :title, content = :content WHERE id = :id');
 
-            $db->bindValue(':title', htmlspecialchars($objetX->getTitle()), PDO::PARAM_STR);
-            $db->bindValue(':content', $objetX->getContent(), PDO::PARAM_STR);
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_INT);
+            $req = $db->prepare('UPDATE article SET title = :title, content = :content WHERE id = :id');
 
-            $db->execute();
+            $req->bindValue(':title', $objetX->getTitle(), PDO::PARAM_STR);
+            $req->bindValue(':content', $objetX->getContent(), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_INT);
+
+            $req->execute();
+
+            var_dump($objetX->getId());
         }
         else if(strtolower(get_class($objetX)) == "media")
         {
             $db = $this->_db;
-            $db->prepare('UPDATE media SET name = :name, type = :type WHERE id = :id');
+            $req = $db->prepare('UPDATE media SET name = :name, type = :type WHERE id = :id');
 
-            $db->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
-            $db->bindValue(':type', htmlspecialchars($objetX->getType()), PDO::PARAM_STR);
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_INT);
+            $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
+            $req->bindValue(':type', htmlspecialchars($objetX->getType()), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_INT);
 
-            $db->execute();
+            $req->execute();
         }
     }
 
