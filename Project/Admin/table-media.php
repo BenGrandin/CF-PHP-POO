@@ -1,9 +1,7 @@
 <?php
-function my_autoloader($class)
-{
-	require '../class/' . $class . '.class.php';
-}
-spl_autoload_register('my_autoloader');
+// Autoloader des classes
+require '../class/autoloader.class.php';
+Autoloader::register();
 // Connexion à la BDD
 $manager = new TableManager();
 ?>
@@ -128,11 +126,18 @@ $manager = new TableManager();
 							<form action="" method="POST">
 								<button type="submit" name="New" class="btn btn-success">New Media</button>
 							</form>
-
 						</div>
                         <table class="table table-striped table-dark">
                         <table class="table table-striped">
                         <thead>
+						<?php
+						$result = $manager->getList();
+						var_dump($result);
+						// foreach($result as $key => $value)
+						// {
+							
+						// }
+						?>
                             <tr>
                             <th scope="col">ID</th>
                             <th scope="col">NAME</th>
