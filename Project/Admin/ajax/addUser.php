@@ -4,6 +4,18 @@ function my_autoloader($class)
 	require '../../class/' . $class . '.php';
 }
 spl_autoload_register('my_autoloader');
+
+article = new Article();
+
+string $req = "SELECT * FROM user WHERE";
+
+if (mysqli_query($article->$tm, $sql)) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+}
+
+
 ?>						
 
 						<div class="card mb-3">
@@ -14,7 +26,7 @@ spl_autoload_register('my_autoloader');
 								
 							<div class="card-body">
 								
-								<form autocomplete="off" action="#">
+								<form action="" autocomplete="off" action="#" method="post">
 								  <div class="form-group row">
 									<label for="inputEmail3" class="col-sm-2 col-form-label">User name</label>
 									<div class="col-sm-10">
