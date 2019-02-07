@@ -2,8 +2,6 @@
 // Autoloader des classes
 require './class/autoloader.class.php';
 Autoloader::register();
-// Connexion à la BDD
-$manager = new TableManager();
 ?>
 <html lang="fr-FR">
 <head>
