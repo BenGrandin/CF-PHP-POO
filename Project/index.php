@@ -1,3 +1,10 @@
+<?php
+function my_autoloader($class)
+{
+	require 'class/' . $class . '.php';
+}
+spl_autoload_register('my_autoloader');
+?>
 <html lang="fr-FR">
 <head>
     <meta charset="UTF-8">
@@ -18,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <img src="./media/logo.png" alt="" style="width: 50px; margin-right: 50px;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav" id="navbar">
@@ -494,10 +501,10 @@ $bretagne->getPays(); // France
     <section class="container-fluid" id="propos">
         <div class="row">
             <div class="col-12 d-flex justify-content-around">
-                <a href="https://github.com/BenGrandin">Benjamin Grandin</a>
-                <a href="https://github.com/DoryanLievre">Doryan Lièvre</a>
-                <a href="https://github.com/CedricLphn">Cedric Leprohon</a>
-                <a href="https://github.com/Flow2dot0">Florian Gustin</a>
+                <a href="https://github.com/BenGrandin"><h4>Benjamin Grandin</h4></a>
+                <a href="https://github.com/DoryanLievre"><h4>Doryan Lièvre</h4></a>
+                <a href="https://github.com/CedricLphn"><h4>Cedric Leprohon</h4></a>
+                <a href="https://github.com/Flow2dot0"><h4>Florian Gustin</h4></a>
             </div>
         </div>
     </section>

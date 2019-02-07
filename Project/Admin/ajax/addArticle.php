@@ -1,4 +1,12 @@
-		<!-- BEGIN CSS for this page --> 
+<?php
+function my_autoloader($class)
+{
+	require '../../class/' . $class . '.php';
+}
+spl_autoload_register('my_autoloader');
+?>
+
+<!-- BEGIN CSS for this page --> 
 		<link rel="stylesheet" href="assets/plugins/trumbowyg/ui/trumbowyg.min.css"> 
 		<!-- END CSS for this page --> 
 
