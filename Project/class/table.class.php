@@ -5,9 +5,11 @@ abstract class Table{
     protected $tm;
     protected $table;
 
-    function __construct(array $data) {
+    function __construct(array $data = []) {
         // Hydratation du tableau $data
-        $this->hydrate($data); // hydratation du tableau $data.
+        if(!empty($data)) {
+            $this->hydrate($data); // hydratation du tableau $data.
+        }
         // Instanciation d'un nouveau table manager.
         $this->tm = new TableManager($this->table);
     }

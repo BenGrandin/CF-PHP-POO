@@ -3,7 +3,7 @@ require '../class/autoloader.class.php';
 
 Autoloader::register();
 
-$article = new Article(["title", "content"]); 
+$article = new Article(); 
 var_dump($article->fetch($article->setId(1)));
 
 ?>
