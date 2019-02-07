@@ -3,7 +3,7 @@ require '../class/autoloader.class.php';
 
 Autoloader::register();
 
-$tm = new TableManager();
+
 
 ?>
 <!DOCTYPE html>
