@@ -30,10 +30,11 @@ Autoloader::register();
         $files = $data['data'];
 
         $newFile = new Media();
-        $newFile->setName($files["metas"][O]["old_name"]);
-        $newFile->setType($files["metas"][O]["extension"]);
+        //var_dump($files["metas"][0]["old_name"]);
+        $newFile->setName($files["metas"][0]["old_name"]);
+        $newFile->setType($files["metas"][0]["extension"]);
 
-        var_dump($newFile);
+       // var_dump($newFile);
 
         $newFile->create();
 

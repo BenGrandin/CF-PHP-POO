@@ -4,7 +4,6 @@ require '../class/autoloader.class.php';
 Autoloader::register();
 
 $article = new Article(); 
-var_dump($article->fetch($article->setId(1)));
 
 if(isset($_POST['titre']) && isset($_POST['content'])) {
 	if(!empty($_POST['titre']) && !empty($_POST['content'])) {
