@@ -10,14 +10,8 @@ abstract class Table{
 
         $this->tm = new TableManager($this->table);
     }
-
-    protected function hydrate(array $data)
-    {
-        $this->hydrate($data);
-        $tm = new TableManager();
-    }
     
-    public function hydrate(array $data)
+    protected function hydrate(array $data)
     {
         foreach($data as $key => $values)
         {
