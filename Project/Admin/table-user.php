@@ -7,7 +7,7 @@ $user = new User();
 $x = $user->fetchAll();
 // var_dump($x);
 // var_dump($user.getTm());
-/*
+
 foreach($x as $key => $value ){
 	echo $value['id'];
 
@@ -16,11 +16,9 @@ foreach($x as $key => $value ){
 	// echo "value " . $value;
 	// echo "test2 " . $x[$key];
 
-
-
-} */
+} 
 ?>
-<script>
+<!-- <script>
 	let arr = <?php echo json_encode($x);?>;
 	//Json.toObject(arr);
 	console.log(arr);
@@ -32,7 +30,7 @@ foreach($x as $key => $value ){
 	document.getElementsByTagName("tbody").innerHtml +=
 	'<tr> <th scope="row">1</th>	<td>?</td>	<td>?</td>	<td>	<button type="button" class="btn btn-primary">Edit</button>	<button type="button" class="btn btn-danger">Delete</button> </td>';
 
-</script>
+</script> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -152,16 +150,18 @@ foreach($x as $key => $value ){
 							<th scope="col">OPTIONS</th>
                             </tr>
 						</thead>
+						<?php $i='0'; foreach($x as $key => $value) { ?>
                         <tbody id="tbody">
                             <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-							<td>?</td>
+                            <th scope="row" id="id<?php echo $i ?>"><?php echo $value['id'] ?></th>
+                            <td id="name<?php echo $i ?>"><?php echo $value['name'] ?></td>
+							<td id="password<?php echo $i ?>" <?php $i ?>"><?php echo $value['password'] ?></td>
 							<td>
-								<button type="button" class="btn btn-primary">Edit</button>
-								<button type="button" class="btn btn-danger">Delete</button>
+								<button id="edit<?php echo $i ?>" onclick="edit(<?php echo $i ?>)" type="button" class="btn btn-primary">Edit</button>
+								<button id="delete<?php echo $i ?>" onclick="delete(<?php echo $i ?>)" type="button" class="btn btn-danger">Delete</button>
 							</td>
                         </tbody>
+                    <?php $i++; } ?>
                         </table>
 
             </div>
@@ -224,9 +224,39 @@ foreach($x as $key => $value ){
 				}
 			)
 		});
-	</script>
-	
-	
+
+		function edit(i){
+			console.log(i);
+// <th scope="row" id="id <?php $i ?>"><?php echo $value['id'] ?></th>
+			let id = document.getElementById("id"+i);
+			console.log(id);
+
+// <td id="name<?php echo $i ?>"><?php echo $value['name'] ?></td>
+			let name = document.getElementById("name"+i);
+			console.log(name);
+			name.innerHTML = " <input id=editName"+i+" value=" + name.innerText + i+ "> </input>";
+// <td id="password<?php echo $i ?>" <?php $i ?>"><?php echo $value['password'] ?></td>
+			let password = document.getElementById("password"+i);
+			console.log(password);
+			password.innerHTML = " <input  id=editPassword"+i+" value=" + password.innerText + i+ "> </input>";
+
+			// edit
+			let edit = document.getElementById("edit"+i);
+			console.log(edit);
+			edit.innerHTML = "<button id='send(<?php echo $i ?>)' onclick='send(<?php echo $i ?>)' type='button' class='btn btn-primary'>Send</button>";
+		}
+
+		function send(i){
+
+		}
+
+		function delete(i){
+
+		}
+		</script>
+
+<!-- https://stackoverflow.com/questions/46068544/ajax-update-database-on-button-click -->
+
 <!-- END Java Script for this page -->
 
 </body>
