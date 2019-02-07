@@ -83,9 +83,9 @@ spl_autoload_register('my_autoloader');
                         </code></pre>
                     </div >
                     <div class="col-1"></div>
-                    <div class="col-5 explanations"><p>Une <i>class</i> PHP est un ensemble de code cohérent permettant de définir de manière abstraite un objet.</p>
-                    <p>Les <i>class</i> en orientée objet sont réutilisable dans le sens, où, si je donne ma <i>class</i> à une personne, il sera en mesure de l'utiliser sans avoir à l'adapter.</p>
-                    <p>Ces <i>class</i> contiennent des <i>attibuts</i> correspondants à des <i>propriétés</i> et des <i>méthodes</i> correspondant à des fonctions.</p>
+                    <div class="col-5 explanations"><p>Une <i>classe</i> PHP est un ensemble de code cohérent permettant de définir de manière abstraite un objet.</p>
+                    <p>Les <i>classes</i> en orientée objet sont réutilisable dans le sens, où, si je donne ma <i>classe</i> à une personne, il sera en mesure de l'utiliser sans avoir à l'adapter.</p>
+                    <p>Ces <i>classes</i> contiennent des <i>attibuts</i> correspondants à des <i>propriétés</i> et des <i>méthodes</i> correspondant à des fonctions.</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -185,7 +185,7 @@ function __construct($name, $flag, $language){
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>Le <i>constructeur</i> permet d'instancier un nouvel objet à partir de la <i>class</i>. En PHP, il est toujours définit par la <i>fonction __constructor()</i> .</p>
+                        <p>Le <i>constructeur</i> permet d'instancier un nouvel objet à partir de la <i>classe</i>. En PHP, il est toujours définit par la <i>fonction __constructor()</i> .</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -249,7 +249,7 @@ echo Pays::helloCountry("France");
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p><i>"statique"</i> permet d'appeler une fonction dans une <i>class</i> sans devoir l'instancier.</p></div>
+            <p><i>"static"</i> permet d'appeler une fonction dans une <i>classe</i> sans devoir l'instancier.</p></div>
             <div class="col-1"></div>
         </div>
 
@@ -309,7 +309,7 @@ $Fr->addCitizen(10); // 60
             <div class="col-1"></div>
 
             <div class="col-5 explanations">
-                <p><i>"this"</i> permet de travailler sur des variables issues d'une <i>class</i>.</p>
+                <p><i>"this"</i> permet de travailler sur des variables issues d'une <i>classe</i>.</p>
             </div>
 
             <div class="col-1"></div>
@@ -326,8 +326,8 @@ $Fr->addCitizen(10); // 60
 
             <div class="col-5 explanations">
 
-            <p><i>"parent"</i> permet d'appeler une fonction ou une variable issue d'une <i>class</i> parente.</p>
-        <p>Par exemple si une fonction est déclarées à la fois dans une <i>class A</i> et dans une <i>class B</i> héritée de la <i>class A</i>, l'utilisation de parent permettra le traitement de la fonction ou variable de la <i>class A</i> (et non de la <i>class B</i>).</p></div>
+            <p><i>"parent"</i> permet d'appeler une fonction ou une variable issue d'une <i>classe</i> parente.</p>
+        <p>Par exemple si une fonction est déclarées à la fois dans une <i>classe A</i> et dans une <i>classe B</i> héritée de la <i>classe A</i>, l'utilisation de parent permettra le traitement de la fonction ou variable de la <i>classe A</i> (et non de la <i>classe B</i>).</p></div>
             <div class="col-1"></div>
             <div class="col-4 examples">
                 <pre><code class="php">
@@ -416,11 +416,11 @@ $bretagne->getPays(); // France
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p><i>L'héritage</i> permet à un <i>class B</i> fille d'hérité d'une <i>class A</i> Mère les attributs et méthodes de celle-ci.</p>
-            <p>Si l'on déclare des méthodes dans la <i>class A</i>, et qu'on crée une instance de la <i>class B</i>,</p>
+            <p><i>L'héritage</i> permet à une <i>classe B</i> fille d'hériter d'une <i>classe A</i> Mère les attributs et méthodes de celle-ci.</p>
+            <p>Si l'on déclare des méthodes dans la <i>classe A</i>, et qu'on crée une instance de la <i>classe B</i>,</p>
             <p>alors on pourra appeler n'importe quelle méthode déclarée dans la class A du moment qu'elle est publique.</p>
             <p></p>
-            <p>L'attribut <i>Protected</i> des méthodes signifie que les méthodes sont accèssible uniquement à l'intérieur des <i>class</i>.</p>
+            <p>L'attribut <i>Protected</i> des méthodes signifie que les méthodes sont accèssible uniquement à l'intérieur des <i>classes</i>.</p>
             </div>
             <div class="col-1"></div>
         </div>
@@ -437,7 +437,7 @@ $bretagne->getPays(); // France
          <div class="row">
             <div class="col-1"></div>
             <div class="col-5 explanations">
-                <p>Un <i>Interface</i> permet de définir une ou plusieurs méthodes obligatoires pour une ou plusieurs <i>class</i>.</p>
+                <p>Un <i>Interface</i> permet de définir une ou plusieurs méthodes obligatoires pour une ou plusieurs <i>classes</i>.</p>
             </div>
             <div class="col-1"></div>
             <div class="col-4 examples">
@@ -489,9 +489,9 @@ $bretagne->getPays(); // France
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p> <i>L'autoloader</i> est une fonction permettant de charger automatiquement les <i>class</i>,</p>
-            <p>ce qui permet de ne pas appeler les fichiers de <i>class</i>.</p>
-            <p>Pour ce faire, il appelera une fonction (ici my_autoloader) qui s'enclenchera dès qu'on fera appel à une <i>class</i>.</p>
+            <p> <i>L'autoloader</i> est une fonction permettant de charger automatiquement les <i>classes</i>,</p>
+            <p>ce qui permet de ne pas appeler les fichiers de <i>classe</i>.</p>
+            <p>Pour ce faire, il appelera une fonction (ici my_autoloader) qui s'enclenchera dès qu'on fera appel à une <i>classe</i>.</p>
             </div>
             <div class="col-1"></div>
         </div>
