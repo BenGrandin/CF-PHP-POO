@@ -10,8 +10,5 @@ class Media extends Table{
 
     protected function getName() : string { return $this->name; } // ": string" impose le type de retour
     protected function getType() : string { return $this->type; }
-
-    public function fetch() { return $this->tm->get($this->getId()); }
-    public function fetchAll() { return $this->tm->getList(); }
 }
 ?>

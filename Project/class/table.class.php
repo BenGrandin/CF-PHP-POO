@@ -26,5 +26,14 @@ abstract class Table{
         }
         
     }
+
+    protected function fetch() {
+        return $this->tm->get($this->getId());
+    }
+
+    protected function fetchAll() {
+        return $this->tm->getList();
+    }
+
 }
 ?>
