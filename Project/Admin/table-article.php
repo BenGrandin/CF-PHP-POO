@@ -14,6 +14,13 @@ if(isset($_POST['titre']) && isset($_POST['content'])) {
 	}
 }
 
+// Suppression
+
+if(isset($_GET['id'])) {
+	$article->setId(htmlspecialchars($_GET['id']));
+	$article->delete();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -145,7 +152,7 @@ if(isset($_POST['titre']) && isset($_POST['content'])) {
 							<td><?= $data["content"]; ?></td>
 							<td>
 								<button type="button" id="<?=$data['id'];?>" class="btn btn-primary">Edit</button>
-								<button type="button" id="<?=$data['id'];?>"  class="btn btn-danger">Delete</button>
+								<a href="?id=<?=$data['id'];?>"  class="btn btn-danger">Delete</a>
 							</td>
                         </tbody>
 						<?php

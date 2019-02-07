@@ -24,7 +24,7 @@ class Article extends Table{
     public function getContent() : ?string {
         return $this->_content;
     }
-    
+
 
 
 }

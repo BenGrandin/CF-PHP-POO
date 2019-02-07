@@ -148,34 +148,34 @@ class TableManager{
         }
     }
 
-    static public function delete($objetX)
+    public function delete($objetX)
     {
         if(strtolower(get_class($objetX)) == "user")
         {
             $db = $this->_db;
-            $db->prepare('DELETE FROM user WHERE id= :id');
+            $req = $db->prepare('DELETE FROM user WHERE id= :id');
 
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
         else if(strtolower(get_class($objetX)) == "article")
         {
             $db = $this->_db;
-            $db->prepare('DELETE FROM article WHERE id= :id');
+            $req = $db->prepare('DELETE FROM article WHERE id= :id');
 
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
         else if(strtolower(get_class($objetX)) == "media")
         {
             $db = $this->_db;
-            $db->prepare('DELETE FROM media WHERE id= :id');
+            $req = $db->prepare('DELETE FROM media WHERE id= :id');
 
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
     }
 

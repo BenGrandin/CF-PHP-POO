@@ -93,7 +93,6 @@ templates: {
                                 <li>{{fi-progressBar}}</li>\
                             </ul>\
                             <ul class="list-inline pull-right">\
-                                <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
                             </ul>\
                         </div>\
                     </div>\
@@ -114,9 +113,6 @@ templates: {
                                 <ul class="list-inline pull-left">\
                                     <li><span class="jFiler-item-others">{{fi-icon}}</span></li>\
                                 </ul>\
-                                <ul class="list-inline pull-right">\
-                                    <li><a class="icon-jfi-trash jFiler-item-trash-action"></a></li>\
-                                </ul>\
                             </div>\
                         </div>\
                     </div>\
@@ -128,7 +124,6 @@ templates: {
         list: '.jFiler-items-list',
         item: '.jFiler-item',
         progressBar: '.bar',
-        remove: '.jFiler-item-trash-action'
     }
 },
 dragDrop: {
