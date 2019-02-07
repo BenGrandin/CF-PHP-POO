@@ -4,7 +4,7 @@ require '../class/autoloader.class.php';
 Autoloader::register();
 
 $article = new Article(["title", "content"]); 
-var_dump($article->fetch(1));
+var_dump($article->fetch($article->setId(1)));
 
 ?>
 <!DOCTYPE html>

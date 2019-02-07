@@ -27,10 +27,10 @@ abstract class Table{
         }
         
     }
-    protected function fetch() {
+    public function fetch() {
         return $this->tm->get($this->getId());
     }
-    protected function fetchAll() {
+    public function fetchAll() {
         return $this->tm->getList();
     }
     public function setId(int $id) { $this->id = $id;}

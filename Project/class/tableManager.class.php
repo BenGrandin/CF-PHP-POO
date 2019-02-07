@@ -182,12 +182,7 @@ class TableManager{
     {
         if($this->_db == null) {
             try {
-
-                $host = "localhost";
-                $dbname = "cf_poo_php";
-                $user = "root";
-                $password = "root";
-         
+                require_once dirname(__DIR__).'/config.php';
                 $db = new PDO
                 (
                     "mysql:host=$host;dbname=$dbname",
