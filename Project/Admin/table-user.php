@@ -3,34 +3,27 @@ require '../class/autoloader.class.php';
 
 Autoloader::register();
 
-$user = new User();
-$x = $user->fetchAll();
-// var_dump($x);
-// var_dump($user.getTm());
+$user = new User(); 
 
-foreach($x as $key => $value ){
-	echo $value['id'];
+if(isset($_POST['name']) && isset($_POST['password'])) {
+	if(!empty($_POST['name']) && !empty($_POST['password'])) {
 
-	// echo "test " . $key{$value};
-	// echo "key " . $key;
-	// echo "value " . $value;
-	// echo "test2 " . $x[$key];
-
-} 
-?>
-<!-- <script>
-	let arr = <?php echo json_encode($x);?>;
-	//Json.toObject(arr);
-	console.log(arr);
-	console.log(arr[0]);
-
-	for(i=0 ; i<arr.length ;  i++){
-		console.log(arr[i])
+		$user->setName(htmlspecialchars($_POST['name']));
+		$user->setPassword($_POST['password']);
+		
+		$user->create();
+		
 	}
-	document.getElementsByTagName("tbody").innerHtml +=
-	'<tr> <th scope="row">1</th>	<td>?</td>	<td>?</td>	<td>	<button type="button" class="btn btn-primary">Edit</button>	<button type="button" class="btn btn-danger">Delete</button> </td>';
+}
 
-</script> -->
+// Suppression
+
+if(isset($_GET['id'])) {
+	$user->setId(htmlspecialchars($_GET['id']));
+	$user->delete();
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,6 +50,31 @@ foreach($x as $key => $value ){
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
+
+
+		<script src="assets/js/modernizr.min.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/moment.min.js"></script>
+				
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+
+		<script src="assets/js/detect.js"></script>
+		<script src="assets/js/fastclick.js"></script>
+		<script src="assets/js/jquery.blockUI.js"></script>
+		<script src="assets/js/jquery.nicescroll.js"></script>
+
+		<!-- App js -->
+		<script src="assets/js/pikeadmin.js"></script>
+
+		<!-- BEGIN Java Script for this page -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+			<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+			<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+			<!-- Counter-Up-->
+			<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
+			<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>	
 		
 </head>
 
@@ -121,7 +139,7 @@ foreach($x as $key => $value ){
     <div class="content-page">
 	
 		<!-- Start content -->
-        <div class="content" id="content">
+        <div class="content">
             
 			<div class="container-fluid">
 					
@@ -137,31 +155,33 @@ foreach($x as $key => $value ){
 											</div>
 									</div>
 						</div>
-						<div class="row">
-							<button type="button" class="btn btn-success" id="btn_add">New User</button>
-						</div>
+						<div class="row" id="content">
+							<!-- c'était pas difficile bordel, tu as passé du temps a tout faire mais même pas fichu de faire ce lien !! !-->
+							<button class="btn btn-success" id="btn_add">New User</button>
+						
                         <table class="table table-striped table-dark">
-                        <table id="table" class="table table-striped">
+                        <table class="table table-striped">
                         <thead>
                             <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">NAME</th>
-							<th scope="col">PASSWORD</th>
-							<th scope="col">OPTIONS</th>
+                            <th scope="col">Username</th>
                             </tr>
-						</thead>
-						<?php $i='0'; foreach($x as $key => $value) { ?>
-                        <tbody id="tbody">
+	                    </thead>
+						<?php
+						foreach($user->fetchAll() as $data) {
+						
+						?>
+                        <tbody>
                             <tr>
-                            <th scope="row" id="id<?php echo $i ?>"><?php echo $value['id'] ?></th>
-                            <td id="name<?php echo $i ?>"><?php echo $value['name'] ?></td>
-							<td id="password<?php echo $i ?>" <?php $i ?>"><?php echo $value['password'] ?></td>
+                            <th scope="row"><?= $data["id"]; ?></th>
+                            <td><?= $data["name"]; ?></td>
 							<td>
-								<button id="edit<?php echo $i ?>" onclick="edit(<?php echo $i ?>)" type="button" class="btn btn-primary">Edit</button>
-								<button id="delete<?php echo $i ?>" onclick="delete(<?php echo $i ?>)" type="button" class="btn btn-danger">Delete</button>
+								<a href="?id=<?=$data['id'];?>"  class="btn btn-danger">Delete</a>
 							</td>
                         </tbody>
-                    <?php $i++; } ?>
+						<?php
+						}
+						?>
                         </table>
 
             </div>
@@ -184,79 +204,36 @@ foreach($x as $key => $value ){
 
 </div>
 <!-- END main -->
-
-<script src="assets/js/modernizr.min.js"></script>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/moment.min.js"></script>
 		
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-
-<script src="assets/js/detect.js"></script>
-<script src="assets/js/fastclick.js"></script>
-<script src="assets/js/jquery.blockUI.js"></script>
-<script src="assets/js/jquery.nicescroll.js"></script>
-
-<!-- App js -->
-<script src="assets/js/pikeadmin.js"></script>
-
-<!-- BEGIN Java Script for this page -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
-	<!-- Counter-Up-->
-	<script src="assets/plugins/waypoints/lib/jquery.waypoints.min.js"></script>
-	<script src="assets/plugins/counterup/jquery.counterup.min.js"></script>			
 
 	<script>
+		$(document).ready(function() {
+			// data-tables
+			$('#example1').DataTable();
+					
+			// counter-up
+			$('.counter').counterUp({
+				delay: 10,
+				time: 600
+			});
+		} );		
+
+		
+
 		$("#btn_add").on("click", function() {
-			$.ajax(
-				{
-					url: "ajax/addUser.php",
-					type: "GET",
-					success: function(data) {
-						$("#content").html(data);
-					},
-					error: function(data) {
-						alert("Erreur");
-					}
+			$.ajax({
+				url: "ajax/addUser.php",
+				type: "GET",
+				success: function(data) {
+					$("#content").html(data);
+				},
+				error : function(error) {
+					alert("Erreur");
 				}
-			)
-		});
-
-		function edit(i){
-			console.log(i);
-// <th scope="row" id="id <?php $i ?>"><?php echo $value['id'] ?></th>
-			let id = document.getElementById("id"+i);
-			console.log(id);
-
-// <td id="name<?php echo $i ?>"><?php echo $value['name'] ?></td>
-			let name = document.getElementById("name"+i);
-			console.log(name);
-			name.innerHTML = " <input id=editName"+i+" value=" + name.innerText + i+ "> </input>";
-// <td id="password<?php echo $i ?>" <?php $i ?>"><?php echo $value['password'] ?></td>
-			let password = document.getElementById("password"+i);
-			console.log(password);
-			password.innerHTML = " <input  id=editPassword"+i+" value=" + password.innerText + i+ "> </input>";
-
-			// edit
-			let edit = document.getElementById("edit"+i);
-			console.log(edit);
-			edit.innerHTML = "<button id='send(<?php echo $i ?>)' onclick='send(<?php echo $i ?>)' type='button' class='btn btn-primary'>Send</button>";
-		}
-
-		function send(i){
-
-		}
-
-		function delete(i){
-
-		}
-		</script>
-
-<!-- https://stackoverflow.com/questions/46068544/ajax-update-database-on-button-click -->
-
+			})
+		})
+	</script>
+	
 <!-- END Java Script for this page -->
 
 </body>

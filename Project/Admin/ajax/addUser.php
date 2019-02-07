@@ -1,17 +1,14 @@
 <?php
-function my_autoloader($class)
-{
-	require '../../class/' . $class . '.php';
-}
-spl_autoload_register('my_autoloader');
+require '../../class/autoloader.class.php';
 
-$req = "SELECT * FROM user WHERE";
+Autoloader::register();
 
-if (mysqli_query($tm->_db, $req)) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $req . "<br>" . mysqli_error($conn);
-}
+
+$array = [
+	"id" => false,
+	"title" => null,
+	"content" => null
+];
 
 
 ?>						
@@ -24,17 +21,17 @@ if (mysqli_query($tm->_db, $req)) {
 								
 							<div class="card-body">
 								
-								<form action="" autocomplete="off" action="#" method="post">
+								<form action="table-user.php" autocomplete="off" method="post">
 								  <div class="form-group row">
-									<label for="inputEmail3" class="col-sm-2 col-form-label">User name</label>
+									<label for="name" class="col-sm-2 col-form-label">User name</label>
 									<div class="col-sm-10">
-									  <input type="email" class="form-control" id="inputEmail3" placeholder="Email" autocomplete="off">
+									  <input type="email" class="form-control" id="name" name="name" placeholder="Email" autocomplete="off">
 									</div>
 								  </div>
 								  <div class="form-group row">
-									<label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+									<label for="password" class="col-sm-2 col-form-label">Password</label>
 									<div class="col-sm-10">
-									  <input type="password" class="form-control" id="inputPassword3" placeholder="Password" autocomplete="off">
+									  <input type="password" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off">
 									</div>
 								  </div>
 								  <div class="form-group row">
