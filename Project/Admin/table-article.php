@@ -6,6 +6,12 @@ Autoloader::register();
 $article = new Article(); 
 var_dump($article->fetch($article->setId(1)));
 
+if(isset($_POST['titre']) && isset($_POST['content'])) {
+	if(!empty($_POST['titre']) && !empty($_POST['content'])) {
+		
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -134,10 +140,10 @@ var_dump($article->fetch($article->setId(1)));
                             <tr>
                             <th scope="row"><?= $data["id"]; ?></th>
                             <td><?= $data["title"]; ?></td>
-							<td>?</td>
+							<td><?= $data["content"]; ?></td>
 							<td>
-								<button type="button" class="btn btn-primary">Edit</button>
-								<button type="button" class="btn btn-danger">Delete</button>
+								<button type="button" id="<?=$data['id'];?>" class="btn btn-primary">Edit</button>
+								<button type="button" id="<?=$data['id'];?>"  class="btn btn-danger">Delete</button>
 							</td>
                         </tbody>
 						<?php
