@@ -5,14 +5,12 @@ function my_autoloader($class)
 }
 spl_autoload_register('my_autoloader');
 
-article = new Article();
+$req = "SELECT * FROM user WHERE";
 
-string $req = "SELECT * FROM user WHERE";
-
-if (mysqli_query($article->$tm, $sql)) {
+if (mysqli_query($tm->_db, $req)) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error: " . $req . "<br>" . mysqli_error($conn);
 }
 
 
