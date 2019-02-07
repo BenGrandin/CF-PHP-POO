@@ -1,9 +1,10 @@
 <?php
-function my_autoloader($class)
-{
-	require '../class/' . $class . '.php';
-}
-spl_autoload_register('my_autoloader');
+require '../class/autoloader.class.php';
+
+Autoloader::register();
+
+$tm = new TableManager();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
