@@ -1,16 +1,16 @@
 <?php
 class TableManager{
 
-    private $_db; // Instance de PDO.
+    private $_db = null; // Instance de PDO.
     // private $_tableStructure = [
     //     "user" => ['id', 'name', 'password'],
     //     "article" => ['id', 'title', 'content'],
     //     "media" => ['id', 'name', 'type']
     // ]; // $_tableStructure['article'][0] ==> id
 
-    public function __construct()
+    function __construct()
     {
-        $this->setDb();
+       $this->setDb();
     }
 
     // public function getTableStructure(string $name, string $key)
@@ -178,7 +178,7 @@ class TableManager{
 
     public function setDb()
     {
-        if($this->_db) {
+        if($this->_db == null) {
             try {
 
                 $host = "localhost";
@@ -192,8 +192,7 @@ class TableManager{
                     $user,
                     $password,
                     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-         
-                $this->_db = $db;
+                    $this->_db = $db;
                 }
          
             catch(Exception $e) {
@@ -201,12 +200,11 @@ class TableManager{
          
             }    
         }
-      
+
+        return $this->_db;
+
+
     }
 
 }
-
-$manager = new TableManager(); //connecté à la BDD
-
-$manager->create($article1);
 ?>
