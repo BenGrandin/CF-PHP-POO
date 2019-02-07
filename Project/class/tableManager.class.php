@@ -24,9 +24,10 @@ class TableManager{
 
     public function create($objetX)
     {
+        $db = $this->_db;
+
         if(strtolower(get_class($objetX)) == "user")
         {
-            $db = $this->_db;
             $db->prepare('INSERT name, password INTO user VALUES (name = :name, password = :password');
 
             $db->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
@@ -36,7 +37,6 @@ class TableManager{
         }
         else if(strtolower(get_class($objetX)) == "article")
         {
-            $db = $this->_db;
             $db->prepare('INSERT title, content INTO article VALUES (title = :title, content = :content');
 
             $db->bindValue(':title', htmlspecialchars($objetX->getTitle()), PDO::PARAM_STR);
@@ -46,7 +46,6 @@ class TableManager{
         }
         else if(strtolower(get_class($objetX)) == "media")
         {
-            $db = $this->_db;
             $db->prepare('INSERT name, type INTO media VALUES (name = :name, type = :type');
 
             $db->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
