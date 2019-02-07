@@ -126,16 +126,23 @@ var_dump($article->fetch($article->setId(1)));
 							<th scope="col">OPTIONS</th>
                             </tr>
 	                    </thead>
+						<?php
+						foreach($article->fetchAll() as $data) {
+						
+						?>
                         <tbody>
                             <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
+                            <th scope="row"><?= $data["id"]; ?></th>
+                            <td><?= $data["title"]; ?></td>
 							<td>?</td>
 							<td>
 								<button type="button" class="btn btn-primary">Edit</button>
 								<button type="button" class="btn btn-danger">Delete</button>
 							</td>
                         </tbody>
+						<?php
+						}
+						?>
                         </table>
 
             </div>
