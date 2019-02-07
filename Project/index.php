@@ -76,9 +76,9 @@
                         </code></pre>
                     </div >
                     <div class="col-1"></div>
-                    <div class="col-5 explanations"><p>Une classe PHP est un ensemble de code cohérent permettant de définir de manière abstraite un objet.</p>
-                    <p>Les classes en orientée objet sont réutilisable dans le sens, où, si je donne ma classe à une personne, il sera en mesure de l'utiliser sans devoir à l'adapter.</p>
-                    <p>Ces classes contiennent des attibutes correspondants à des propriétés et des méthodes correspondant à des fonctions.</p>
+                    <div class="col-5 explanations"><p>Une <i>class</i> PHP est un ensemble de code cohérent permettant de définir de manière abstraite un objet.</p>
+                    <p>Les <i>class</i> en orientée objet sont réutilisable dans le sens, où, si je donne ma <i>class</i> à une personne, il sera en mesure de l'utiliser sans avoir à l'adapter.</p>
+                    <p>Ces <i>class</i> contiennent des <i>attibuts</i> correspondants à des <i>propriétés</i> et des <i>méthodes</i> correspondant à des fonctions.</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -134,7 +134,7 @@ function describe($name, $flag, $language)
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>Les setters servent à définir les attributs.</p>
+                        <p>Les <i>setters</i> servent à définir les attributs.</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -147,7 +147,7 @@ function describe($name, $flag, $language)
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>Les getters servent à accéder aux attributs.</p>
+                        <p>Les <i>getters</i> servent à accéder aux attributs.</p>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-4 examples">
@@ -178,7 +178,7 @@ function __construct($name, $flag, $language){
                     </div>
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>Le constructeur permet d'instancier un nouvel objet à partir de la classe. En PHP, il est toujours définit par la fonction __constructor() .</p>
+                        <p>Le <i>constructeur</i> permet d'instancier un nouvel objet à partir de la <i>class</i>. En PHP, il est toujours définit par la <i>fonction __constructor()</i> .</p>
                     </div>
                     <div class="col-1"></div>
                 </div>
@@ -191,7 +191,7 @@ function __construct($name, $flag, $language){
                 <div class="row">
                     <div class="col-1"></div>
                     <div class="col-5 explanations">
-                        <p>L'hydratation sert à définir les valeurs des attributs grâce à un tableau.</p>
+                        <p>L'<i>hydratation</i> sert à définir les valeurs des attributs grâce à un tableau.</p>
                     </div>
                     <div class="col-1"></div>
                     <div class="col-4 examples">
@@ -242,7 +242,7 @@ echo Pays::helloCountry("France");
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p>Une méthode statique permet d'appeler une fonction dans une classe sans devoir l'instancier.</p></div>
+            <p><i>"statique"</i> permet d'appeler une fonction dans une <i>class</i> sans devoir l'instancier.</p></div>
             <div class="col-1"></div>
         </div>
 
@@ -256,8 +256,8 @@ echo Pays::helloCountry("France");
             <div class="row">
             <div class="col-1"></div>
             <div class="col-5 explanations">
-                <p>"self" est une variable qui permet d'utiliser des attributss ou des fonctions statiques.</p>
-                <p>Cette dernière n'est utilisable uniquement que dans des fonctions statiques</p>
+                <p><i>"self"</i> permet d'utiliser des attributs ou des fonctions statiques.</p>
+                <p>Cette dernière est utilisable uniquement dans des fonctions statiques.</p>
             </div>
             <div class="col-1"></div>
             <div class="col-4 examples">
@@ -302,7 +302,7 @@ $Fr->addCitizen(10); // 60
             <div class="col-1"></div>
 
             <div class="col-5 explanations">
-                <p>Cette variable permet de travailler sur des variables issues d'une classe.</p>
+                <p><i>"this"</i> permet de travailler sur des variables issues d'une <i>class</i>.</p>
             </div>
 
             <div class="col-1"></div>
@@ -319,8 +319,8 @@ $Fr->addCitizen(10); // 60
 
             <div class="col-5 explanations">
 
-            <p>"parent" permet d'appeler une fonction ou une variable issue d'une classe parente.</p>
-        <p>Par exemple si une fonction est déclarées à la fois dans une classe A et dans une classe B héritée de la classe A, l'utilisation de parent permettra le traitement de la fonction ou variable de la classe A (et non de la classe B).</p></div>
+            <p><i>"parent"</i> permet d'appeler une fonction ou une variable issue d'une <i>class</i> parente.</p>
+        <p>Par exemple si une fonction est déclarées à la fois dans une <i>class A</i> et dans une <i>class B</i> héritée de la <i>class A</i>, l'utilisation de parent permettra le traitement de la fonction ou variable de la <i>class A</i> (et non de la <i>class B</i>).</p></div>
             <div class="col-1"></div>
             <div class="col-4 examples">
                 <pre><code class="php">
@@ -354,7 +354,7 @@ Class Region extends Pays
     }
 
     public function getPays() {
-        // Retourne la variable $name de la classe parente
+        // Retourne la variable $name de la class parente
         return parent::$name;
     }
 }
@@ -409,11 +409,11 @@ $bretagne->getPays(); // France
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p><i>L'héritage</i> permet à un classe B fille d'hérité d'une class A Mère les attributs et méthodes de celle-ci</p>
-            <p>Si l'on déclare des méthodes dans la classe A, et qu'on crée une instance de la classe B,</p>
-            <p>alors on pourra appeler n'importe quelle méthode déclarée dans la classe A du moment qu'elle est publique</p>
+            <p><i>L'héritage</i> permet à un <i>class B</i> fille d'hérité d'une <i>class A</i> Mère les attributs et méthodes de celle-ci.</p>
+            <p>Si l'on déclare des méthodes dans la <i>class A</i>, et qu'on crée une instance de la <i>class B</i>,</p>
+            <p>alors on pourra appeler n'importe quelle méthode déclarée dans la class A du moment qu'elle est publique.</p>
             <p></p>
-            <p>L'attribut <i>Protected</i> des méthodes signifie que les méthodes sont accèssible uniquement à l'intérieur des classes.</p>
+            <p>L'attribut <i>Protected</i> des méthodes signifie que les méthodes sont accèssible uniquement à l'intérieur des <i>class</i>.</p>
             </div>
             <div class="col-1"></div>
         </div>
@@ -430,7 +430,7 @@ $bretagne->getPays(); // France
          <div class="row">
             <div class="col-1"></div>
             <div class="col-5 explanations">
-                <p>Un Interface permet de définir une ou plusieurs méthodes obligatoires pour une ou plusieurs Classe.</p>
+                <p>Un <i>Interface</i> permet de définir une ou plusieurs méthodes obligatoires pour une ou plusieurs <i>class</i>.</p>
             </div>
             <div class="col-1"></div>
             <div class="col-4 examples">
@@ -482,9 +482,9 @@ $bretagne->getPays(); // France
             </div>
             <div class="col-1"></div>
             <div class="col-5 explanations">
-            <p> <i>L'autoloader</i> est une fonction permettant de charger automatiquement les classes,</p>
-            <p>ce qui permet de ne pas appeler les fichiers de classe.</p>
-            <p>Pour ce faire, il appelera une fonction (ici my_autoloader) qui s'enclenchera dès qu'on fera appel à une classe.</p>
+            <p> <i>L'autoloader</i> est une fonction permettant de charger automatiquement les <i>class</i>,</p>
+            <p>ce qui permet de ne pas appeler les fichiers de <i>class</i>.</p>
+            <p>Pour ce faire, il appelera une fonction (ici my_autoloader) qui s'enclenchera dès qu'on fera appel à une <i>class</i>.</p>
             </div>
             <div class="col-1"></div>
         </div>

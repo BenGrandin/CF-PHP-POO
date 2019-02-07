@@ -5,7 +5,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">						 
 						<div class="card mb-3"> 
 							<div class="card-header"> 
-								<h3><i class="fa fa-file-o"></i> Add article</h3> 
+								<h3><i class="fa fa-file-o"></i> Add  article</h3> 
 								Et faire en sorte que ca marche. 
 							</div> 
 							<div class="card-body"> 
