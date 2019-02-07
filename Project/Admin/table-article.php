@@ -3,7 +3,7 @@ require '../class/autoloader.class.php';
 
 Autoloader::register();
 
-
+$article = new Article(); 
 
 ?>
 <!DOCTYPE html>
