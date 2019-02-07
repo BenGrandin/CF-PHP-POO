@@ -1,18 +1,20 @@
 <?php
 function my_autoloader($class)
 {
-	require '../class/' . $class . '.php';
+	require '../class/' . $class . '.class.php';
 }
 spl_autoload_register('my_autoloader');
+// Connexion à la BDD
+$manager = new TableManager();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr-FR">
 <head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<title>Admin</title>
-		<meta name="description" content="Free Bootstrap 4 Admin Theme | Pike Admin">
+		<meta name="description" content="Dashboard">
 		<meta name="author" content="Pike Web Development - https://www.pikephp.com">
 
 		<!-- Favicon -->
