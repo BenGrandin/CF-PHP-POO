@@ -6,7 +6,8 @@ class Autoloader {
     }
 
     public static function load($class) {
-        require '../class/' . $class . '.class.php';
+        var_dump($class);
+        require './class/' . $class . '.class.php';
 
     }
 }

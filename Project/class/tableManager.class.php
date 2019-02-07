@@ -183,7 +183,7 @@ class TableManager{
                 $host = "localhost";
                 $dbname = "cf_poo_php";
                 $user = "root";
-                $password = "root";
+                $password = "";
          
                 $db = new PDO
                 (

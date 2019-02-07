@@ -3,13 +3,15 @@ abstract class Table{
 
     protected $id;
     protected $tm;
+    protected $table;
 
-    function __construct()
+    function __construc(array $data)
     {
-        $this->hydrate($donnees);
+        $this->hydrate($data);
+        $tm = new TableManager();
     }
-
-    protected function hydrate(array $data)
+    
+    public function hydrate(array $data)
     {
         foreach($data as $key => $values)
         {
