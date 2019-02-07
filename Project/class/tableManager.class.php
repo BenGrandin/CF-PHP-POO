@@ -31,30 +31,31 @@ class TableManager{
 
         if(strtolower(get_class($objetX)) == "user")
         {
-            $db->prepare('INSERT name, password INTO user VALUES (name = :name, password = :password');
+            $req=  $db->prepare('INSERT name, password INTO user VALUES (name = :name, password = :password');
 
-            $db->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
-            $db->bindValue(':password', password_hash($objetX->getPassword(), PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
+            $req->bindValue(':password', password_hash($objetX->getPassword(), PASSWORD_DEFAULT), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
         else if(strtolower(get_class($objetX)) == "article")
         {
-            $db->prepare('INSERT title, content INTO article VALUES (title = :title, content = :content');
+            var_dump($db);
+            $req = $db->prepare("INSERT INTO article(title, content) VALUES(:title, :content)");
 
-            $db->bindValue(':title', htmlspecialchars($objetX->getTitle()), PDO::PARAM_STR);
-            $db->bindValue(':content', $objetX->getContent(), PDO::PARAM_STR);
+            $req->bindValue(':title', $objetX->getTitle(), PDO::PARAM_STR);
+            $req->bindValue(':content', $objetX->getContent(), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
         else if(strtolower(get_class($objetX)) == "media")
         {
-            $db->prepare('INSERT name, type INTO media VALUES (name = :name, type = :type');
+            $req = $db->prepare('INSERT name, type INTO media VALUES (name = :name, type = :type');
 
-            $db->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
-            $db->bindValue(':type', $objetX->getType(), PDO::PARAM_STR);
+            $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
+            $req->bindValue(':type', $objetX->getType(), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
 
         // $column = implode(',' $this->_tableStructure[get_class(strtolower($this))]); // id,name,password
@@ -183,7 +184,7 @@ class TableManager{
     {
         if($this->_db == null) {
             try {
-                require_once dirname(__DIR__).'/config.php';
+                require dirname(__DIR__).'/config.php';
                 $db = new PDO
                 (
                     "mysql:host=$host;dbname=$dbname",

@@ -8,7 +8,10 @@ var_dump($article->fetch($article->setId(1)));
 
 if(isset($_POST['titre']) && isset($_POST['content'])) {
 	if(!empty($_POST['titre']) && !empty($_POST['content'])) {
-		
+		$article->setTitle(htmlspecialchars($_POST['titre']));
+		$article->setContent($_POST['content']);
+
+		$article->create();
 	}
 }
 

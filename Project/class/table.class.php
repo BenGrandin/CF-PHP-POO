@@ -38,6 +38,11 @@ abstract class Table{
     public function delete() {
         $this->tm->delete($this);
     }
+
+    public function create() {
+        $this->tm->create($this);
+    }
+
     public function setId(int $id) { $this->id = $id;}
     public function getId(){ return $this->id; }
 }

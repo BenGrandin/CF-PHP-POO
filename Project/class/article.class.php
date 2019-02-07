@@ -8,7 +8,7 @@ class Article extends Table{
 
     
     public function setTitle(string $title) {
-        $this->_title = $this->_title;
+        $this->_title = $title;
     }
 
     public function setContent(string $content) {
@@ -16,14 +16,15 @@ class Article extends Table{
     }
 
 
-    public function getTitle() : string {
+    public function getTitle() : ?string {
         return $this->_title;
     }
 
 
-    public function getContent() : string {
+    public function getContent() : ?string {
         return $this->_content;
     }
+    
 
 
 }
