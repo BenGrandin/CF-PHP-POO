@@ -3,12 +3,12 @@ class Media extends Table{
 
     protected $name;
     protected $type;
+    protected $table = "media";
 
-    // public function setName(string $name) { $this->name = $name; }
-    // public function setType(string $type) { $this->type = $type; }
+    protected function setName(string $name) { $this->name = $name; }
+    protected function setType(string $type) { $this->type = $type; }
 
-    // public function getName() { return $this->name; }
-    // public function getType() { return $this->type; }
-
+    protected function getName() : string { return $this->name; } // ": string" impose le type de retour
+    protected function getType() : string { return $this->type; }
 }
 ?>

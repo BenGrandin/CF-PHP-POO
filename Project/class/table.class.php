@@ -6,8 +6,8 @@ abstract class Table{
     protected $table;
 
     function __construct(array $data) {
-        $this->hydrate($data);
 
+        $this->hydrate($data);
         $this->tm = new TableManager($this->table);
     }
     
@@ -26,5 +26,14 @@ abstract class Table{
         }
         
     }
+
+    protected function fetch() {
+        return $this->tm->get($this->getId());
+    }
+
+    protected function fetchAll() {
+        return $this->tm->getList();
+    }
+
 }
 ?>
