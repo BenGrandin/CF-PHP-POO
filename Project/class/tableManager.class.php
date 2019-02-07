@@ -31,7 +31,7 @@ class TableManager{
 
         if(strtolower(get_class($objetX)) == "user")
         {
-            $req=  $db->prepare('INSERT name, password INTO user VALUES (name = :name, password = :password');
+            $req=  $db->prepare('INSERT INTO user(name,password) VALUES (:name, :password');
 
             $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
             $req->bindValue(':password', password_hash($objetX->getPassword(), PASSWORD_DEFAULT), PDO::PARAM_STR);
@@ -50,7 +50,7 @@ class TableManager{
         }
         else if(strtolower(get_class($objetX)) == "media")
         {
-            $req = $db->prepare('INSERT name, type INTO media VALUES (name = :name, type = :type');
+            $req = $db->prepare('INSERT INTO media(name, type) VALUES(:name, :type');
 
             $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
             $req->bindValue(':type', $objetX->getType(), PDO::PARAM_STR);
