@@ -2,6 +2,14 @@
 // Autoloader des classes
 require_once '../class/autoloader.class.php';
 Autoloader::register();
+
+if(isset($_GET['id']))
+{
+	$deleteMedia = new Media();
+	$deleteMedia->setId($_GET['id']);
+
+	$deleteMedia->delete();
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -143,30 +151,16 @@ Autoloader::register();
 						{
 
 						?>
-						<form action="" method="GET">
                         <tbody>
                             <tr>
                             <th scope="row" name="<?php $value['id']; ?>"><?php echo $value['id']; ?></th>
                             <td><?php echo $value['name']; ?></td>
 							<td><?php echo $value['type']; ?></td>
 							<td>
-								<a name="Delete" href="?id=<?php echo $value['id']; ?>" class="btn btn-danger">Delete</a>
+								<a href="?id=<?php echo $value['id']; ?>" class="btn btn-danger">Delete</a>
 							</td>
                         </tbody>
-						</form>
 						<?php	
-						}
-						if(isset($_POST['Delete']))
-						{
-							
-							$id = $_POST['id'];
-							$name = $_POST[$value['name']];
-							$type = $_POST[$value['type']];
-							$arr = array("id" => $id, "name" => $name, "type" => $type);
-
-							$deleteMedia = new Media($arr);
-
-							TableManager::delete($deleteMedia);
 						}
 						?>
 						</table>
