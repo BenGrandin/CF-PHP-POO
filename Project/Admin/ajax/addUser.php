@@ -12,7 +12,7 @@ $array = [
 
 
 ?>						
-
+						
 						<div class="card mb-3">
 							<div class="card-header">
 								<h3><i class="fa fa-check-square-o"></i>Add User</h3>
@@ -36,9 +36,11 @@ $array = [
 								  </div>
 								  <div class="form-group row">
 									<div class="col-sm-10">
-									  <button type="submit" class="btn btn-primary">Add User</button>
+										<button type="submit" class="btn btn-primary">Add User</button>
+										<!-- BOUTON BACK -->
+										<a href="../admin/table-user.php" type="button" class="btn btn-secondary">Back</a>
 									</div>
-								  </div>
+									</div>
 								</form>
 								
 							</div>							

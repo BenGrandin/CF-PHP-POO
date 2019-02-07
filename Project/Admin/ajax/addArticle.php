@@ -49,8 +49,8 @@ if(isset($_POST['id'])) {
 										 
 									  <br><br> 
 										 
-									  <div class="form-navigation"> 
-										<button type="button" class="previous btn btn-info pull-left" style="display: none;">&lt; Previous</button> 
+									  <div class="form-navigation"> 									
+										<a href="../admin/table-article.php" type="button" class="btn btn-secondary">Retour</a> 
 										<input type="hidden" name="id" value="<?= $array['id']; ?>" /><input type="submit" class="next btn btn-info pull-right" /> 
 										<span class="clearfix"></span> 
 									  </div> 

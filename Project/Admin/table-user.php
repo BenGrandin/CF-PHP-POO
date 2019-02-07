@@ -50,7 +50,7 @@ if(isset($_GET['id'])) {
 		<!-- BEGIN CSS for this page -->
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css"/>
 		<!-- END CSS for this page -->
-
+		
 
 		<script src="assets/js/modernizr.min.js"></script>
 		<script src="assets/js/jquery.min.js"></script>
@@ -112,7 +112,6 @@ if(isset($_GET['id'])) {
 			<div id="sidebar-menu">
         
 			<ul>
-					
 					<li class="submenu">
                         <a href="#" class="active"><i class="fa fa-fw fa-table"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
 							<ul class="list-unstyled">

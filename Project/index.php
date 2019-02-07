@@ -23,7 +23,7 @@ $articles = new Article();
 <body>
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <img src="./media/logo.png" alt="" style="width: 50px; margin-right: 50px;">
+        <img src="./media/logo.png" alt="" style="width: 50px; margin: 0px 20px 0px 20px;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,32 +57,32 @@ $articles = new Article();
                 $readLogo->setId(10);
                 $result = $readLogo->fetch();
                 ?>
-                <div class="col-1"></div>
-                <div class="col-2">
+                
+                <div class="col-2 text-center">
                     <a href="https://github.com/BenGrandin">
                     <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
                     <h4>Benjamin Grandin</h4>
                     </a>
                 </div>
-                <div class="col-2">
+                <div class="col-2 text-center">
                     <a href="https://github.com/DoryanLievre">
                     <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
                     <h4>Doryan Lièvre</h4>
                     </a>
                 </div>
-                <div class="col-2">
+                <div class="col-2 text-center">
                     <a href="https://github.com/CedricLphn">
                     <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
                     <h4>Cedric Leprohon</h4>
                     </a>
                 </div>
-                <div class="col-2">
+                <div class="col-2 text-center">
                     <a href="https://github.com/Flow2dot0">
                     <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
                     <h4>Florian Gustin</h4>
                     </a>
                 </div>
-                <div class="col-1"></div>
+                
         </div>
     </section>
 

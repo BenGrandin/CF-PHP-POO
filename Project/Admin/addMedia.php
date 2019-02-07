@@ -9,7 +9,7 @@
 <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 
 <!-- Font Awesome CSS -->
-<link href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 <!-- Custom CSS -->
 <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
@@ -27,10 +27,13 @@
 <link href="assets/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
 <link href="assets/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
 <!-- END CSS for this page -->
-
+<div class="row" style="margin-bottom: 15px;">
+    <a href="table-media.php" type="button" class="btn btn-secondary">Back</a>
+</div>	
 <div class="row">
     
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">						
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+								
         <div class="card mb-3">
             <div class="card-header">
                 <h3><i class="fa fa-file"></i> Media</h3>
@@ -42,7 +45,8 @@
                         <input type="file" name="files[]" id="filer_example1" multiple="multiple">
                         
             </div>														
-        </div><!-- end card-->					
+        </div><!-- end card-->	
+	
     </div>
 </div>
 
