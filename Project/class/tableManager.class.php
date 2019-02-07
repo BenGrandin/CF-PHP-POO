@@ -97,7 +97,7 @@ class TableManager{
         echo "SELECT * FROM ".$this->_table." WHERE id = $id";
         $req = $this->_db->prepare("SELECT * FROM ".$this->_table." WHERE id = :id");
         $req->bindValue(":id", $id, PDO::PARAM_INT);
-        //$req->setFetchMode(PDO::FETCH_OBJ);
+        $req->setFetchMode(PDO::FETCH_ASSOC);
         $req->execute();
 
         return $req->fetch();
@@ -106,7 +106,7 @@ class TableManager{
     public function getList()
     {
         $req = $this->query("SELECT * FROM ".$this->_table . " ORDER BY id ASC");
-        //$req->setFetchMode(PDO::FETCH_OBJ);
+        $req->setFetchMode(PDO::FETCH_ASSOC);
 
        return $req->fetchAll();
     }
