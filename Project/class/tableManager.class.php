@@ -8,9 +8,12 @@ class TableManager{
     //     "media" => ['id', 'name', 'type']
     // ]; // $_tableStructure['article'][0] ==> id
 
-    function __construct()
+    private $_table;
+
+    function __construct($table)
     {
        $this->setDb();
+       $this->_table = $table;
     }
 
     // public function getTableStructure(string $name, string $key)
@@ -91,17 +94,18 @@ class TableManager{
 
     public function get(int $id)
     {
-        
-        $req = $this->query("SELECT * FROM ".strtolower(get_class($this))." WHERE id = :id",
-         ["id" => $id]);
+        echo "SELECT * FROM ".$this->_table." WHERE id = $id";
+        $req = $this->_db->prepare("SELECT * FROM ".$this->_table." WHERE id = :id");
+        $req->bindValue(":id", $id, PDO::PARAM_INT);
         $req->setFetchMode(PDO::FETCH_OBJ);
+        $req->execute();
 
         return $req->fetch();
     }
 
     public function getList()
     {
-        $req = $this->query("SELECT * FROM". strtolower(get_class($this)));
+        $req = $this->query("SELECT * FROM ".$this->_table . " ORDER BY id ASC");
        $req->setFetchMode(PDO::FETCH_OBJ);
 
        return $req->fetchAll();
