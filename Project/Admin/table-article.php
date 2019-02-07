@@ -4,6 +4,7 @@ require '../class/autoloader.class.php';
 Autoloader::register();
 
 $article = new Article(); 
+<<<<<<< Updated upstream
 var_dump($article->fetch($article->setId(1)));
 
 if(isset($_POST['titre']) && isset($_POST['content'])) {
@@ -15,7 +16,11 @@ if(isset($_POST['titre']) && isset($_POST['content'])) {
 	}
 }
 
+=======
+var_dump($article->fetchAll());
+>>>>>>> Stashed changes
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

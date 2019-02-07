@@ -201,9 +201,6 @@ class TableManager{
         }
 
         return $this->_db;
-
-
     }
-
 }
 ?>

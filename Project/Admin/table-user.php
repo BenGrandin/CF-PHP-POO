@@ -1,10 +1,39 @@
 <?php
-function my_autoloader($class)
-{
-	require '../class/' . $class . '.php';
-}
-spl_autoload_register('my_autoloader');
+require '../class/autoloader.class.php';
+
+Autoloader::register();
+
+$user = new User();
+$x = $user->fetchAll();
+// var_dump($x);
+// var_dump($user.getTm());
+/*
+foreach($x as $key => $value ){
+	echo $value['id'];
+
+	// echo "test " . $key{$value};
+	// echo "key " . $key;
+	// echo "value " . $value;
+	// echo "test2 " . $x[$key];
+
+
+
+} */
 ?>
+<script>
+	let arr = <?php echo json_encode($x);?>;
+	//Json.toObject(arr);
+	console.log(arr);
+	console.log(arr[0]);
+
+	for(i=0 ; i<arr.length ;  i++){
+		console.log(arr[i])
+	}
+	document.getElementsByTagName("tbody").innerHtml +=
+	'<tr> <th scope="row">1</th>	<td>?</td>	<td>?</td>	<td>	<button type="button" class="btn btn-primary">Edit</button>	<button type="button" class="btn btn-danger">Delete</button> </td>';
+
+</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,7 +143,7 @@ spl_autoload_register('my_autoloader');
 							<button type="button" class="btn btn-success" id="btn_add">New User</button>
 						</div>
                         <table class="table table-striped table-dark">
-                        <table class="table table-striped">
+                        <table id="table" class="table table-striped">
                         <thead>
                             <tr>
                             <th scope="col">ID</th>
@@ -123,7 +152,7 @@ spl_autoload_register('my_autoloader');
 							<th scope="col">OPTIONS</th>
                             </tr>
 						</thead>
-                        <tbody>
+                        <tbody id="tbody">
                             <tr>
                             <th scope="row">1</th>
                             <td>?</td>
