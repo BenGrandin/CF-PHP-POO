@@ -31,10 +31,10 @@ class TableManager{
 
         if(strtolower(get_class($objetX)) == "user")
         {
-            $req=  $db->prepare('INSERT INTO user(name,password) VALUES (:name, :password');
+            $req= $db->prepare("INSERT INTO user(name,password) VALUES(:user, :pwd)");
 
-            $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
-            $req->bindValue(':password', password_hash($objetX->getPassword(), PASSWORD_DEFAULT), PDO::PARAM_STR);
+            $req->bindValue(':user', $objetX->getName(), PDO::PARAM_STR);
+            $req->bindValue(':pwd', password_hash($objetX->getPassword(), PASSWORD_DEFAULT), PDO::PARAM_STR);
 
             $req->execute();
         }
