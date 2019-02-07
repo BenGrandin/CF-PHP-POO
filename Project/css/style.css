@@ -46,6 +46,10 @@ h4{
     font-weight: bold;
 }
 
+#propos .row .col-2{
+    widows: 25%;
+}
+
 
 @media screen and (max-width: 768px)
 {

@@ -57,7 +57,7 @@ $articles = new Article();
                 $readLogo->setId(10);
                 $result = $readLogo->fetch();
                 ?>
-                
+                <div class="col-1"></div>
                 <div class="col-2">
                     <a href="https://github.com/BenGrandin">
                     <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
@@ -82,6 +82,7 @@ $articles = new Article();
                     <h4>Florian Gustin</h4>
                     </a>
                 </div>
+                <div class="col-1"></div>
         </div>
     </section>
 
