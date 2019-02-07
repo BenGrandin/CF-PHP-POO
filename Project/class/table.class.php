@@ -5,7 +5,13 @@ abstract class Table{
     protected $tm;
     protected $table;
 
-    function __construc(array $data)
+    function __construct(array $data) {
+        $this->hydrate($data);
+
+        $this->tm = new TableManager($this->table);
+    }
+
+    protected function hydrate(array $data)
     {
         $this->hydrate($data);
         $tm = new TableManager();
