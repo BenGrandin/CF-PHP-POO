@@ -25,13 +25,6 @@ class Article extends Table{
         return $this->_content;
     }
 
-    public function fetch() {
-        return $this->tm->get($this->getId());
-    }
-
-    public function fetchAll() {
-        return $this->tm->getList();
-    }
 
 }
 ?>
