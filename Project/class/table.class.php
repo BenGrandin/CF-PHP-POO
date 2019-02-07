@@ -6,8 +6,8 @@ abstract class Table{
     protected $table;
 
     function __construct(array $data) {
-        $this->hydrate($data);
 
+        $this->hydrate($data);
         $this->tm = new TableManager($this->table);
     }
     
