@@ -15,7 +15,6 @@ class TableManager{
        $this->setDb();
        $this->_table = $table;
     }
-
     // public function getTableStructure(string $name, string $key)
     // {
     //     if($this->_tableStructure[$name][$key]) {
@@ -79,7 +78,7 @@ class TableManager{
         //$request = "INSERT INTO " . $obj->getTableName() . " "
 
     }
-
+    
     public function query($statement, $arg = []) {
 
         try {
