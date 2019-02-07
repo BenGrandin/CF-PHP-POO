@@ -94,7 +94,6 @@ class TableManager{
 
     public function get(int $id)
     {
-        echo "SELECT * FROM ".$this->_table." WHERE id = $id";
         $req = $this->_db->prepare("SELECT * FROM ".$this->_table." WHERE id = :id");
         $req->bindValue(":id", $id, PDO::PARAM_INT);
         $req->setFetchMode(PDO::FETCH_ASSOC);
@@ -136,7 +135,6 @@ class TableManager{
 
             $req->execute();
 
-            var_dump($objetX->getId());
         }
         else if(strtolower(get_class($objetX)) == "media")
         {

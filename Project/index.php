@@ -50,14 +50,38 @@ $articles = new Article();
         ?>
     <!-- Story 8 --->
     <section class="container-fluid" id="propos">
-        <div class="row">
-            <div class="col-12 d-flex justify-content-around">
-            <img src="https://img.freepik.com/free-vector/app-icon-set-flat_1325-488.jpg?size=338&ext=jpg">
-                <a href="https://github.com/BenGrandin"><h4>Benjamin Grandin</h4></a>
-                <a href="https://github.com/DoryanLievre"><h4>Doryan Lièvre</h4></a>
-                <a href="https://github.com/CedricLphn"><h4>Cedric Leprohon</h4></a>
-                <a href="https://github.com/Flow2dot0"><h4>Florian Gustin</h4></a>
-            </div>
+        <div class="row d-flex justify-content-center">
+            
+            <?php
+                $readLogo = new Media();
+                $readLogo->setId(10);
+                $result = $readLogo->fetch();
+                ?>
+                
+                <div class="col-2">
+                    <a href="https://github.com/BenGrandin">
+                    <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
+                    <h4>Benjamin Grandin</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="https://github.com/DoryanLievre">
+                    <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
+                    <h4>Doryan Lièvre</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="https://github.com/CedricLphn">
+                    <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
+                    <h4>Cedric Leprohon</h4>
+                    </a>
+                </div>
+                <div class="col-2">
+                    <a href="https://github.com/Flow2dot0">
+                    <img class="lkd" src="admin/assets/plugins/jquery.filer/uploads/<?php echo $result['name'] . '.' . $result['type'] ?>">
+                    <h4>Florian Gustin</h4>
+                    </a>
+                </div>
         </div>
     </section>
 

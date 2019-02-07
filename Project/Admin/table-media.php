@@ -183,7 +183,7 @@ if(isset($_GET['id']))
 						<script src="assets/js/pikeadmin.js"></script>
 
 						<!-- END Java Script for this page -->
-<?php						}
+<?php					}
 ?>
             </div>
 			<!-- END container-fluid -->

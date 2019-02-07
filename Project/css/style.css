@@ -31,6 +31,22 @@ h3{
     font-weight: bold;
 }
 
+h4{
+    font-size: 18px;
+    margin-top:20px;
+}
+
+.lkd {
+    width: 100px;
+}
+
+#propos .row .col-2 a{
+    text-decoration: none !important;
+    color: black;
+    font-weight: bold;
+}
+
+
 @media screen and (max-width: 768px)
 {
     h1{
