@@ -4,11 +4,6 @@ require '../class/autoloader.class.php';
 Autoloader::register();
 
 $article = new Article(); 
-<<<<<<< HEAD
-
-var_dump($article->fetch($article->setId(1)));
-=======
->>>>>>> master
 
 if(isset($_POST['titre']) && isset($_POST['content'])) {
 	if(!empty($_POST['titre']) && !empty($_POST['content'])) {
@@ -27,17 +22,12 @@ if(isset($_POST['titre']) && isset($_POST['content'])) {
 	}
 }
 
-<<<<<<< HEAD
-
-var_dump($article->fetchAll());
-=======
 // Suppression
 
 if(isset($_GET['id'])) {
 	$article->setId(htmlspecialchars($_GET['id']));
 	$article->delete();
 }
->>>>>>> master
 
 ?>
 
