@@ -1,9 +1,7 @@
 <?php
-function my_autoloader($class)
-{
-	require '../class/' . $class . '.php';
-}
-spl_autoload_register('my_autoloader');
+// Autoloader des classes
+require '../class/autoloader.class.php';
+Autoloader::register();
 ?>
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/images/favicon.ico">

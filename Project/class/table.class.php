@@ -35,6 +35,9 @@ abstract class Table{
     public function fetchAll() {
         return $this->tm->getList();
     }
+    public function delete() {
+        $this->tm->delete($this);
+    }
     public function setId(int $id) { $this->id = $id;}
     public function getId(){ return $this->id; }
 }

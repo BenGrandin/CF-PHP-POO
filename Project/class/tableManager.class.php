@@ -1,5 +1,6 @@
 <?php
 class TableManager{
+    
 
     private $_db = null; // Instance de PDO.
     // private $_tableStructure = [
@@ -147,7 +148,7 @@ class TableManager{
         }
     }
 
-    public function delete()
+    static public function delete($objetX)
     {
         if(strtolower(get_class($objetX)) == "user")
         {

@@ -2,8 +2,6 @@
 // Autoloader des classes
 require '../class/autoloader.class.php';
 Autoloader::register();
-// Connexion à la BDD
-$manager = new TableManager();
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -131,12 +129,7 @@ $manager = new TableManager();
                         <table class="table table-striped">
                         <thead>
 						<?php
-						$result = $manager->getList();
-						var_dump($result);
-						// foreach($result as $key => $value)
-						// {
-							
-						// }
+
 						?>
                             <tr>
                             <th scope="col">ID</th>
@@ -145,17 +138,39 @@ $manager = new TableManager();
 							<th scope="col">OPTIONS</th>
                             </tr>
                         </thead>
+						<?php
+						$readMedias = new Media();
+						
+						$result = $readMedias->fetchAll();
+
+						foreach($result as $key => $value)
+						{
+
+						?>
+						<form action="" method="POST">
                         <tbody>
                             <tr>
-                            <th scope="row">1</th>
-                            <td>?</td>
-							<td>?</td>
+                            <th scope="row" name="<?php $value['id']; ?>"><?php echo $value['id']; ?></th>
+                            <td name="<?php $value['name']; ?>"><?php echo $value['name']; ?></td>
+							<td name="<?php $value['type']; ?>"><?php echo $value['type']; ?></td>
 							<td>
-							<form action="" method="POST">
 								<button type="submit" name="Delete" class="btn btn-danger">Delete</button>
-							</form>
 							</td>
                         </tbody>
+						</form>
+						<?php	
+						}
+						if(isset($_POST['Delete']))
+						{
+							$id = $_POST[$value['id']];
+							$name = $_POST[$value['name']];
+							$type = $_POST[$value['type']];
+
+							$deleteMedia = new Media([$id, $name, $type]);
+
+							TableManager::delete($deleteMedia);
+						}
+						?>
 						</table>
 						
 						<!-- END main -->
