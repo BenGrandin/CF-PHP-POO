@@ -40,7 +40,6 @@ class TableManager{
         }
         else if(strtolower(get_class($objetX)) == "article")
         {
-            var_dump($db);
             $req = $db->prepare("INSERT INTO article(title, content) VALUES(:title, :content)");
 
             $req->bindValue(':title', $objetX->getTitle(), PDO::PARAM_STR);
@@ -50,9 +49,9 @@ class TableManager{
         }
         else if(strtolower(get_class($objetX)) == "media")
         {
-            $req = $db->prepare('INSERT INTO media(name, type) VALUES(:name, :type');
+            $req = $db->prepare("INSERT INTO media(name, type) VALUES(:name, :type)");
 
-            $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
+            $req->bindValue(':name', $objetX->getName(), PDO::PARAM_STR);
             $req->bindValue(':type', $objetX->getType(), PDO::PARAM_STR);
 
             $req->execute();
