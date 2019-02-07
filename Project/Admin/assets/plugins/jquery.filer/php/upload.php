@@ -1,4 +1,11 @@
 <?php
+// Autoloader des classes
+require_once '../../../../../class/autoloader.class.php';
+Autoloader::register();
+?>
+
+<?php
+
     include('class.uploader.php');
     
     $uploader = new Uploader();
@@ -21,6 +28,16 @@
     
     if($data['isComplete']){
         $files = $data['data'];
+
+        $newFile = new Media();
+        //var_dump($files["metas"][0]["old_name"]);
+        $newFile->setName($files["metas"][0]["old_name"]);
+        $newFile->setType($files["metas"][0]["extension"]);
+
+       // var_dump($newFile);
+
+        $newFile->create();
+
         print_r($files);
     }
 

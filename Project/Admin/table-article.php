@@ -4,8 +4,11 @@ require '../class/autoloader.class.php';
 Autoloader::register();
 
 $article = new Article(); 
+<<<<<<< HEAD
 
 var_dump($article->fetch($article->setId(1)));
+=======
+>>>>>>> master
 
 if(isset($_POST['titre']) && isset($_POST['content'])) {
 	if(!empty($_POST['titre']) && !empty($_POST['content'])) {
@@ -16,8 +19,17 @@ if(isset($_POST['titre']) && isset($_POST['content'])) {
 	}
 }
 
+<<<<<<< HEAD
 
 var_dump($article->fetchAll());
+=======
+// Suppression
+
+if(isset($_GET['id'])) {
+	$article->setId(htmlspecialchars($_GET['id']));
+	$article->delete();
+}
+>>>>>>> master
 
 ?>
 
@@ -151,7 +163,7 @@ var_dump($article->fetchAll());
 							<td><?= $data["content"]; ?></td>
 							<td>
 								<button type="button" id="<?=$data['id'];?>" class="btn btn-primary">Edit</button>
-								<button type="button" id="<?=$data['id'];?>"  class="btn btn-danger">Delete</button>
+								<a href="?id=<?=$data['id'];?>"  class="btn btn-danger">Delete</a>
 							</td>
                         </tbody>
 						<?php

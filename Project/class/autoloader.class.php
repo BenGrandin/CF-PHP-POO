@@ -7,8 +7,7 @@ class Autoloader {
     }
 
     public static function load($class) {
-        var_dump($class);
-        require '../class/' . $class . '.class.php';
+        require dirname(__DIR__).'/class/' . $class . '.class.php';
 
     }
 }

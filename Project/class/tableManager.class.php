@@ -31,7 +31,7 @@ class TableManager{
 
         if(strtolower(get_class($objetX)) == "user")
         {
-            $req=  $db->prepare('INSERT name, password INTO user VALUES (name = :name, password = :password');
+            $req=  $db->prepare('INSERT INTO user(name,password) VALUES (:name, :password');
 
             $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
             $req->bindValue(':password', password_hash($objetX->getPassword(), PASSWORD_DEFAULT), PDO::PARAM_STR);
@@ -40,7 +40,6 @@ class TableManager{
         }
         else if(strtolower(get_class($objetX)) == "article")
         {
-            var_dump($db);
             $req = $db->prepare("INSERT INTO article(title, content) VALUES(:title, :content)");
 
             $req->bindValue(':title', $objetX->getTitle(), PDO::PARAM_STR);
@@ -50,9 +49,9 @@ class TableManager{
         }
         else if(strtolower(get_class($objetX)) == "media")
         {
-            $req = $db->prepare('INSERT name, type INTO media VALUES (name = :name, type = :type');
+            $req = $db->prepare("INSERT INTO media(name, type) VALUES(:name, :type)");
 
-            $req->bindValue(':name', htmlspecialchars($objetX->getName()), PDO::PARAM_STR);
+            $req->bindValue(':name', $objetX->getName(), PDO::PARAM_STR);
             $req->bindValue(':type', $objetX->getType(), PDO::PARAM_STR);
 
             $req->execute();
@@ -149,34 +148,34 @@ class TableManager{
         }
     }
 
-    static public function delete($objetX)
+    public function delete($objetX)
     {
         if(strtolower(get_class($objetX)) == "user")
         {
             $db = $this->_db;
-            $db->prepare('DELETE FROM user WHERE id= :id');
+            $req = $db->prepare('DELETE FROM user WHERE id= :id');
 
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
         else if(strtolower(get_class($objetX)) == "article")
         {
             $db = $this->_db;
-            $db->prepare('DELETE FROM article WHERE id= :id');
+            $req = $db->prepare('DELETE FROM article WHERE id= :id');
 
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
         else if(strtolower(get_class($objetX)) == "media")
         {
             $db = $this->_db;
-            $db->prepare('DELETE FROM media WHERE id= :id');
+            $req = $db->prepare('DELETE FROM media WHERE id= :id');
 
-            $db->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
+            $req->bindValue(':id', $objetX->getId(), PDO::PARAM_STR);
 
-            $db->execute();
+            $req->execute();
         }
     }
 
