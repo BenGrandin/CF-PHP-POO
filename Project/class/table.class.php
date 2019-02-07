@@ -6,8 +6,9 @@ abstract class Table{
     protected $table;
 
     function __construct(array $data) {
-
-        $this->hydrate($data);
+        // Hydratation du tableau $data
+        $this->hydrate($data); // hydratation du tableau $data.
+        // Instanciation d'un nouveau table manager.
         $this->tm = new TableManager($this->table);
     }
     
@@ -26,14 +27,13 @@ abstract class Table{
         }
         
     }
-
     protected function fetch() {
         return $this->tm->get($this->getId());
     }
-
     protected function fetchAll() {
         return $this->tm->getList();
     }
-
+    public function setId(int $id) { $this->id = $id;}
+    public function getId(){ return $this->id; }
 }
 ?>
