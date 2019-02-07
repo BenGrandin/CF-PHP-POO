@@ -1,8 +1,4 @@
-<?php
-// Autoloader des classes
-require '../class/autoloader.class.php';
-Autoloader::register();
-?>
+
 <!-- Favicon -->
 <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -162,20 +158,7 @@ uploadFile: {
     onProgress: null,
     onComplete: null
 },
-files: [
-    {
-        name: "1.jpg",
-        size: 145,
-        type: "image/jpg",
-        file: "assets/images/sample-image-1.jpg"
-    },
-    {
-        name: "2.jpg",
-        size: 145,
-        type: "image/jpg",
-        file: "assets/images/sample-image-2.jpg"
-    }
-],
+files: [],
 addMore: false,
 clipBoardPaste: true,
 excludeName: null,

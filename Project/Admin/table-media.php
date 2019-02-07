@@ -1,6 +1,6 @@
 <?php
 // Autoloader des classes
-require '../class/autoloader.class.php';
+require_once '../class/autoloader.class.php';
 Autoloader::register();
 ?>
 <!DOCTYPE html>
@@ -114,10 +114,6 @@ Autoloader::register();
 							require_once('addMedia.php');
 							//requete objet PDO SQL INSERT
 						}
-						else if(isset($_POST['Delete']))
-						{
-							//requete objet PDO SQL DELETE
-						}
 						else
 						{
 ?>						<div class="row">
@@ -147,14 +143,14 @@ Autoloader::register();
 						{
 
 						?>
-						<form action="" method="POST">
+						<form action="" method="GET">
                         <tbody>
                             <tr>
                             <th scope="row" name="<?php $value['id']; ?>"><?php echo $value['id']; ?></th>
-                            <td name="<?php $value['name']; ?>"><?php echo $value['name']; ?></td>
-							<td name="<?php $value['type']; ?>"><?php echo $value['type']; ?></td>
+                            <td><?php echo $value['name']; ?></td>
+							<td><?php echo $value['type']; ?></td>
 							<td>
-								<button type="submit" name="Delete" class="btn btn-danger">Delete</button>
+								<a name="Delete" href="?id=<?php echo $value['id']; ?>" class="btn btn-danger">Delete</a>
 							</td>
                         </tbody>
 						</form>
@@ -162,11 +158,13 @@ Autoloader::register();
 						}
 						if(isset($_POST['Delete']))
 						{
-							$id = $_POST[$value['id']];
+							
+							$id = $_POST['id'];
 							$name = $_POST[$value['name']];
 							$type = $_POST[$value['type']];
+							$arr = array("id" => $id, "name" => $name, "type" => $type);
 
-							$deleteMedia = new Media([$id, $name, $type]);
+							$deleteMedia = new Media($arr);
 
 							TableManager::delete($deleteMedia);
 						}
