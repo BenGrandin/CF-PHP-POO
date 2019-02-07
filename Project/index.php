@@ -1,9 +1,9 @@
 <?php
-function my_autoloader($class)
-{
-	require 'class/' . $class . '.php';
-}
-spl_autoload_register('my_autoloader');
+// Autoloader des classes
+require './class/autoloader.class.php';
+Autoloader::register();
+// Connexion à la BDD
+$manager = new TableManager();
 ?>
 <html lang="fr-FR">
 <head>
